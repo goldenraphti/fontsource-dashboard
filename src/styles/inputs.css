@@ -1,0 +1,61 @@
+.input-file-container {
+  position: relative;
+  width: 300px;
+}
+
+.input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: var(--yellow-1);
+  color: #000000;
+  font-size: 1em;
+  transition: all .2s;
+  cursor: pointer;
+  border-radius: 8rem;
+  text-align: center;
+  padding-inline-start: 2rem;
+}
+
+.input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+}
+
+:is(.input-file-container, input[type="file" i], input[type="file"].input-file, .input-file-trigger):hover {
+  cursor: pointer;
+}
+
+.input-file:is(:hover, :focus, :focus-visible) + .input-file-trigger,
+.input-file-trigger:is(:hover, :focus, :focus-visible) {
+  background: color-mix(in oklab, var(--yellow-1), #000000 70%);
+  color: var(--yellow-1);
+}
+
+.input-file:focus-visible + .input-file-trigger {
+  outline: 2px solid var(--yellow-1);
+}
+
+.input-file:active + .input-file-trigger {
+  background: color-mix(in oklab, var(--yellow-1), #000000 80%);
+  color: color-mix(in oklab, var(--yellow-1), #000000 10%);
+}
+
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+.file-return:not(:empty):before {
+  content: "Imported file: ";
+  font-style: normal;
+  font-weight: normal;
+}

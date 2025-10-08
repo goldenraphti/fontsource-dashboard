@@ -1,0 +1,28 @@
+/* make some elements "non-selectable" in order to make it more "app-like" */
+.non-selectable,
+h1,
+h2,
+h3,
+h4,
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+// CSS Safe Area
+.mobile-safe-area {
+  margin: env(safe-area-inset-top)
+          env(safe-area-inset-right)
+          env(safe-area-inset-bottom)
+          env(safe-area-inset-left) !important;
+}
+
+/* style text to use the platform font, to make it feel more like a native app */
+p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* disable Touch Callout 8iOS context menu when long pressing a link; disabling is useful for javascript links */
+/* a {
+  -webkit-touch-callout: none;
+} */

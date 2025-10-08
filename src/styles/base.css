@@ -1,0 +1,229 @@
+/* TODO: decide colors & set them */
+:root {
+
+  /* site specific custom colours*/
+  --beige: #e9dac4;
+  --beige-light: #f5f5f5;
+  --black-1: #181614;
+  --black-2: #58544d;
+
+--green: #017e7d;
+--green-light: #6d928a;
+--green-dark: #024b48;
+--blue: #036c9f;
+--blue-dark: #054164;
+--yellow: #f1bb62;
+--yellow-dark: #d2a220;
+--orange-light: #f7ab06;
+--orange: #f18e22;
+--orange-dark: #d6581d;
+--red: #c01320;
+--turquoise: #0f8395;
+--turquoise-dark: #0c4b59;
+--magenta-light: #f18e9d;
+--magenta: #a11a51;
+--magenta-dark: #500721;
+--lavender-light: #e3efff;
+--lavender: #8c90b6;
+--lavender-dark: #4b4e6e;
+
+
+  --serif-font: 'Crimson Pro Variable', serif;
+  --sans-serif-font: sans-serif;
+  --monospace-font: monospace;
+  --custom-font: 'Special Elite', system-ui;
+  /* end site specific custom */
+
+
+  --primary-1: var(--black-1);
+  --primary-1-light: color-mix(in srgb, var(--primary-1), transparent 70%);
+
+  --bg-color: var(--beige);
+  --text-color: var(--black-1);
+
+  --headings-font: var(--serif-font), sans-serif;
+  --body-font: var(--serif-font), sans-serif;
+
+  --radius-1: 0.5rem;
+  --box-shadow-1: 0 0 10px 0 color-mix(in srgb, var(--primary-1), transparent 50%);
+  --box-shadow-2: 0 0 20px 0 color-mix(in srgb, var(--primary-1), transparent 50%);
+}
+html {
+  font-family: var(--body-font);
+  accent-color: var(--primary-1);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  --width-main: 800px;
+  margin-inline: auto;
+  padding: 1rem;
+  width: var(--width-main);
+  max-width: calc(100% - 2rem);
+  font-size: 20px;
+  line-height: 1.6;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    --width-main: calc(100vw - 2 * 2rem);
+  }
+}
+
+p {
+  text-wrap: balance;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+}
+
+h1, h2, h3 {
+  font-family: var(--headings-font);
+  font-weight: 700;
+  font-variation-settings: "wght" 722;
+  color: var(--black-1);
+  text-wrap: pretty;
+}
+
+h1 {
+  color: var(--black-1);
+  text-align: center;
+  font-size: clamp(3rem, 8vw, 3.5rem);
+  font-style: italic;
+}
+
+button,
+a.button {
+  padding: 10px 20px;
+  background-color: white;
+  color: var(--text-color);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-1);
+  cursor: pointer;
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 6vw, 2.5rem);
+  margin-block: 1rem;
+  margin-bottom: 2rem;
+}
+
+section {
+  margin-block: clamp(5rem, 10vw, 10rem);
+}
+
+h1, h2 {
+  /* actually should it take the value from the section margin-block ? (i.e. `clamp(5rem, 10vw, 10rem`) */
+  scroll-margin-block-start: 10rem;
+}
+
+/* style external links */
+
+a[href^='http'][target='_blank']:not(:has(span.screen-rea, .no-external-link-iconder)) {
+  padding-inline-end: 1.7em;
+}
+
+a[href^='http'][target='_blank']:not(:has(span.screen-reader), .no-external-link-icon)::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-inline-start: 0.25em;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 12.2 12.2' width='14' height='14'%3E%3Cpath d='M5.7 0v1.5h4L4.5 6.7l1 1.1 5.3-5.2v3.9h1.4V0z'/%3E%3Cpath fill='none' d='M3.4 6.7l3-2.9H1.5v7h7V5.9l-3 2.9z'/%3E%3Cpath d='M8.5 5.9v4.9h-7v-7h4.9l1.5-1.6H0v10h10V4.4z'/%3E%3C/svg%3E");
+  transform: translateY(0.25em);
+  opacity: 0.7;
+
+}
+@media (prefers-color-scheme: dark) {
+  a[href^='http'][target='_blank']:not(:has(span.screen-reader), .no-external-link-icon)::after {
+    filter: invert(1);
+  }
+}
+
+/* end style external links */
+
+/* specific style */
+
+h2 {
+  text-align: center;
+
+}
+
+p {
+  text-align: center;
+}
+
+.dual-cards-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  container-type: inline-size;
+  justify-content: space-around;
+  width: 100%;
+
+  & > li {
+      width: 100%;
+  }
+
+  @container (min-width: 700px) {
+    & > li {
+    width: 45%;
+    }
+  }
+}
+
+h2:has(svg + span) {
+  svg {
+    margin-inline-end: 0.5em;
+  }
+}
+
+.back-link-row {
+  width: min(80vw, 100%);
+  display: flex;
+  justify-content: flex-start;
+  margin-inline: auto;
+  margin-block-start: 4rem;
+
+  & a.back-link-button {
+    color: color-mix(in oklab, var(--text-primary), transparent 25%);
+    border: 1px solid transparent;
+    padding: 20px 30px;
+    text-decoration: none;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--text-primary);
+      border-color: currentColor;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    & svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+/* end specific style */
