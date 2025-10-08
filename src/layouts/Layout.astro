@@ -1,71 +1,65 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { seoDescription } from '../content/content-variables';
+
+export interface Props {
+  title: string;
+  isHomepage?: boolean;
+  hasTopbar?: boolean;
+  isMap?: boolean;
+  isFullViewport?: boolean;
+  isDarkBG?: boolean;
+}
+
+const { title, isHomepage = false, hasTopbar = true, isMap = false, isFullViewport = false, isDarkBG = false } = Astro.props;
 // Supports weights 300-700
 import '@fontsource-variable/space-grotesk';
+import '../styles/style.css';
+// TODO: write SEO description
+const descriptionSEO = seoDescription;
+// TODO: enable View Transitions
+import { ClientRouter } from "astro:transitions";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- TODO: update favicon & make it easy to customize + decide on what is needed from festival -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+    <meta name='title' content={title} />
+    <meta name='description' content={descriptionSEO} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property='og:type' content='website' />
+    <!-- <meta property='og:url' content={Astro.url} /> -->
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={descriptionSEO} />
+		<!-- TODO: add general og:image -->
+    <!-- <meta property='og:image' content={"/fontanediroma-og-image-light.jpg"} /> -->
+
+    <!-- Twitter -->
+    <meta property='twitter:card' content='summary_large_image' />
+    <!-- <meta property='twitter:url' content={Astro.url} /> -->
+    <meta property='twitter:title' content={title} />
+    <meta property='twitter:description' content={descriptionSEO} />
+		<!-- TODO: add general og:image -->
+    <!-- <meta property='twitter:image' content={"/fontanediroma-og-image-light.jpg"} /> -->
+    <script src="https://cdn.counter.dev/script.js" data-id="0466ff03-46a9-4faa-a519-cfa045edc2c7" data-utcoffset="2"></script>
+  </head>
+  <body class={isFullViewport ? 'full-viewport' : ''} data-dark-bg={isDarkBG ? 'true' : 'false'}>
+    {hasTopbar && <Header />}
+    <slot />
+    <Footer />
+  </body>
 </html>
-
-<style>
-:root {
-	color-scheme: light dark;
-
-	--light-emerald: #ebfffd;
-	--emerald: #00cdb8;
-	--emerald-dark: #00a79d;
-
-	--color-primary: var(--emerald);
-	--color-primary-light: var(--light-emerald);
-
-	/* START Background styling */
-	--bg-color-light: light-dark(var(--light-emerald), var(--emerald));
-	--bg-color-accent: light-dark(var(--emerald), var(--light-emerald));
-	--bg-opacity: 80;
-	/* END Background styling */
-
-	--color-text-primary: light-dark(var(--emerald-dark), var(--light-emerald));
-	--color-text-bw: light-dark(#111827, #f3f4f6);
-}
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-
-
-
-		background-color: var(--bg-color-light);
-		background-image: radial-gradient(var(--bg-color-accent)  0.9500000000000001px, var(--bg-color-light) 0.9500000000000001px);
-		background-size: 19px 19px;
-
-  font-family: 'Space Grotesk Variable', sans-serif;
-
-		color: var(--color-text-bw);
-	}
-
-
-</style>
-
-<style is:global>
-	@supports selector(:heading) {
-		:heading {
-			color: var(--color-text-primary);
-		}
-	}
-	@supports not (selector(:heading)) {
-		h1, h2, h3, h4, h5 {
-			color: var(--color-text-primary);
-		}
-	}
-</style>

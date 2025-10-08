@@ -1,0 +1,223 @@
+---
+import { useHamburgerMenu, hasBorderBottomTopbar, isTopbarFixed } from '../site-ui-settings';
+import Hamburger from '../icons/Hamburger.astro';
+import Logo from '../logos/Logo.astro';
+
+const navLinks = [
+  {
+    url: '/map',
+    name: '🗺️ map of the zoo'
+  },
+  // {
+  //   url: '/my-favourites',
+  //   name: '⭐ my favourites'
+  // },
+  // {
+  //   url: '/about',
+  //   name: 'ℹ️ about'
+  // },
+  // {
+  //   url: '/contact',
+  //   name: '📬 contact'
+  // },
+]
+
+const currentUrl = Astro.url.pathname;
+---
+
+<header transition:name="header" class={`header ${hasBorderBottomTopbar ? "border-bottom": ""} ${isTopbarFixed ? "fixed" : ""}`}>
+  <a href="/" class="logo" transition:name="h1-title">
+    <span class="visually-hidden">Oslo Urban Zoo</span>
+    🏠 Entrance
+    <Logo logoChosen="tagline" />
+  </a>
+  <nav transition:name="header-links">
+    {
+      useHamburgerMenu ? (
+        <button popovertarget='hamburger-menu-popover'>
+          <Hamburger />
+          <span class="visually-hidden">Open menu</span>
+        </button>
+        <div class="popover-wrapper" id='hamburger-menu-popover' popover>
+          <ul>
+            {navLinks.map(link => (
+              <li>
+                <a href={link.url} transition:name={currentUrl !== link.url ? `h1-title-${link.name.toLowerCase()}` : null} >{link.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <ul>
+          {navLinks.map(link => (
+            <li>
+              <a href={link.url} transition:name={currentUrl !== link.url ? `h1-title-${link.name.toLowerCase()}` : null} >{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </nav>
+</header>
+
+<style>
+  header.header {
+    display: flex;
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+    margin-inline: auto;
+    width: max-content;
+    max-width: 100vw;
+    background-color: color-mix(in oklab, white, transparent 50%);
+    backdrop-filter: blur(10px);
+    top: 0;
+    z-index: 1000;
+    position: absolute;
+    border-radius: 1.5rem;;
+
+    &.border-bottom {
+      border-bottom: 1px solid color-mix(in srgb, var(--primary-1), transparent 70%);
+    }
+
+    &.fixed {
+      position: fixed;
+      left: 50%;
+      transform: translate(-50%, 0.5rem);
+    }
+
+    &:not(:has(a.logo)) {
+      justify-content: space-evenly;
+    }
+
+    > nav button {
+      display: none;
+      box-shadow: none;
+
+      > :global(svg) {
+        fill: var(--primary-1);
+      }
+
+      @media screen and (max-width: 800px) {
+        display: flex;
+        border: none;
+        background-color: unset;
+        cursor: pointer;
+
+      }
+    }
+    a.logo {
+      letter-spacing: 0.015em;
+      color: var(--primary-1);
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+
+      & span.flip-text-h {
+        transform: scale(-1, 1);
+        display: inline-block;
+      }
+
+      @media screen and (max-width: 800px) {
+        font-size: 1rem;
+      }
+    }
+
+    nav div.popover-wrapper {
+      border: none;
+
+      top: 0;
+      margin-block-start: 0;
+      transition: transform 0.5s, opacity 0.5s, display 0.5s, color 0.5s, height 0.2s;
+
+      @media screen and (max-width: 800px) {
+        background-color: var(--primary-1);
+        &::backdrop {
+          background-color: var(--primary-1);
+          height: 75vh;
+        }
+
+        & ul {
+          flex-direction: column;
+          gap: 1rem;
+
+          & a {
+            color: #fff;
+          }
+        }
+      }
+
+      &:popover-open {
+        padding: 10vh 10vw;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+
+        @starting-style {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.9);
+        }
+
+    }
+
+
+      /* unset the popover style if not mobile */
+      @media screen and (min-width: 800px) {
+        display: block;
+        position: relative;
+        background-color: unset;
+      }
+
+      & ul {
+        display: flex;
+        gap: 3rem;
+        list-style-type: none;
+        padding-inline-start: 0;
+        margin-block: 0;
+
+        @media screen and (min-width: 800px) {
+          gap: 2rem;
+        }
+      }
+    }
+
+    a.button {
+      justify-self: start;
+    }
+
+    a:not(.button) {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: capitalize;
+
+      &.active {
+        font-family: var(--custom-font-bold);
+      }
+    }
+
+    /* style for popover non supported, to avoid the flash of display before the polyfill kicks in */
+    @media screen and (max-width: 800px) {
+      @supports not selector(:popover-open) {
+        [popover]:not(.\:popover-open) {
+          display: none;
+        }
+
+        div.popover-wrapper ul {
+          width: 100vw;
+          height: 65vh;
+          align-items: center;
+          padding-block-start: 10vh;
+        }
+      }
+    }
+  }
+
+  /* had to put it down here because postcss-nesting plugin was stripping this chiunk off when parsing it up there when using &::backdrop */
+@media screen and (max-width: 800px) {
+  header.header nav div.popover-wrapper::backdrop {
+    background-color: var(--primary-1);
+    height: 75vh;
+  }
+}
+</style>
