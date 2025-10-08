@@ -1,3 +1,8 @@
+---
+// Supports weights 300-700
+import '@fontsource-variable/space-grotesk';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -13,10 +18,54 @@
 </html>
 
 <style>
+:root {
+	color-scheme: light dark;
+
+	--light-emerald: #ebfffd;
+	--emerald: #00cdb8;
+	--emerald-dark: #00a79d;
+
+	--color-primary: var(--emerald);
+	--color-primary-light: var(--light-emerald);
+
+	/* START Background styling */
+	--bg-color-light: light-dark(var(--light-emerald), var(--emerald));
+	--bg-color-accent: light-dark(var(--emerald), var(--light-emerald));
+	--bg-opacity: 80;
+	/* END Background styling */
+
+	--color-text-primary: light-dark(var(--emerald-dark), var(--light-emerald));
+	--color-text-bw: light-dark(#111827, #f3f4f6);
+}
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+
+
+
+		background-color: var(--bg-color-light);
+		background-image: radial-gradient(var(--bg-color-accent)  0.9500000000000001px, var(--bg-color-light) 0.9500000000000001px);
+		background-size: 19px 19px;
+
+  font-family: 'Space Grotesk Variable', sans-serif;
+
+		color: var(--color-text-bw);
+	}
+
+
+</style>
+
+<style is:global>
+	@supports selector(:heading) {
+		:heading {
+			color: var(--color-text-primary);
+		}
+	}
+	@supports not (selector(:heading)) {
+		h1, h2, h3, h4, h5 {
+			color: var(--color-text-primary);
+		}
 	}
 </style>
