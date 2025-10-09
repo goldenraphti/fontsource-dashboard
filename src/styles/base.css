@@ -53,7 +53,9 @@
 	/* END Background styling */
 
 	--color-text-primary: light-dark(var(--emerald-dark), var(--light-emerald));
-	--color-text-bw: light-dark(#111827, #f3f4f6);
+	--color-text-primary-reversed: light-dark(var(--light-emerald), var(--emerald-dark));
+	--color-text-bw: light-dark(var(--black-1), var(--beige-light));
+  --color-text-bw-reversed: light-dark(var(--beige-light), var(--black-1));
 
   --headings-font: var(--serif-font), sans-serif;
   --body-font: var(--serif-font), sans-serif;
@@ -99,6 +101,11 @@ main {
 
 p {
   text-wrap: balance;
+
+  &::selection {
+    background-color: var(--bg-color-accent);
+    color: var(--bg-color-light);
+  }
 }
 
 ul {
@@ -113,6 +120,13 @@ h1, h2, h3 {
   font-variation-settings: "wght" 722;
   color: var(--color-text-primary);
   text-wrap: pretty;
+
+
+
+  &::selection {
+    background-color: var(--bg-color-accent);
+    color: var(--bg-color-light);
+  }
 }
 
 h1 {

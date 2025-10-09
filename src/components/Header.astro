@@ -1,25 +1,23 @@
 ---
 import { useHamburgerMenu, hasBorderBottomTopbar, isTopbarFixed } from '../site-ui-settings';
-import Hamburger from '../icons/Hamburger.astro';
+import Hamburger from '../icons/Hamburger.svg';
+import StarBookmark from '../icons/StarBookmark.svg';
+import Enveloppe from '../icons/enveloppe.svg';
 import Logo from '../logos/Logo.astro';
 
 const navLinks = [
   {
-    url: '/map',
-    name: '🗺️ map of the zoo'
+    url: '/favourites',
+    name: 'my favourites'
   },
-  // {
-  //   url: '/my-favourites',
-  //   name: '⭐ my favourites'
-  // },
-  // {
-  //   url: '/about',
-  //   name: 'ℹ️ about'
-  // },
-  // {
-  //   url: '/contact',
-  //   name: '📬 contact'
-  // },
+  {
+    url: '/about',
+    name: 'about'
+  },
+  {
+    url: '/contact',
+    name: 'contact'
+  },
 ]
 
 const currentUrl = Astro.url.pathname;
@@ -27,8 +25,8 @@ const currentUrl = Astro.url.pathname;
 
 <header transition:name="header" class={`header ${hasBorderBottomTopbar ? "border-bottom": ""} ${isTopbarFixed ? "fixed" : ""}`}>
   <a href="/" class="logo" transition:name="h1-title">
-    <span class="visually-hidden">Oslo Urban Zoo</span>
-    🏠 Entrance
+    <span class="visually-hidden">Home</span>
+    Home
     <Logo logoChosen="tagline" />
   </a>
   <nav transition:name="header-links">
@@ -220,4 +218,10 @@ const currentUrl = Astro.url.pathname;
     height: 75vh;
   }
 }
+</style>
+
+<style is:global>
+  h1 {
+    margin-block-start: 7rem;
+  }
 </style>

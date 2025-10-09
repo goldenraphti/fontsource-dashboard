@@ -2,6 +2,6 @@
 
 export const useHamburgerMenu = true;
 
-export const hasBorderBottomTopbar = false;
+export const hasBorderBottomTopbar = true;
 
 export const isTopbarFixed = true;
