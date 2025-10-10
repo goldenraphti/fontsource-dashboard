@@ -1,6 +1,7 @@
 ---
 import { Font } from 'astro:assets';
 import type {FontType} from '../content/fonts-list';
+import { toAttributeString } from 'astro/runtime/server/render/util.js';
 
 interface Props {
   fontToPreview: FontType
@@ -9,21 +10,47 @@ interface Props {
 const { fontToPreview } = Astro.props;
 ---
 <Font cssVariable={fontToPreview.cssVariable} preload />
-<div>
-  <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
-</div>
+<details>
+  <summary>
+    <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
+  </summary>
+  <ul>
+    <li><a href={fontToPreview.urlPreview}>Preview 🔗</a></li>
+    <li><strong>font categories:</strong> {fontToPreview.fontCategories.join(", ")}</li>
+    {fontToPreview?.tags?.length && (<li><strong>tags:</strong> {fontToPreview.tags?.join(", ")}</li>)}
+  </ul>
+</details>
 
 <style>
-  div {
+  details {
+    --outer-inline-padding: 2rem;
     width: fit-content;
     border: 1px solid var(--bg-color-accent);
     border-radius: 0.5rem;
-    padding: 1.5rem 2rem;
 
-    p {
+    summary {
+      padding: 1.5rem var(--outer-inline-padding);
       margin: 0;
-      font-family: var(--font-family);
       font-size: 1.5rem;
+      cursor: pointer;
+      list-style: none;
+
+      & p {
+        font-family: var(--font-family);
+        margin: 0;
+      }
+
+    }
+    &:open {
+      & > *:not(summary) {
+        padding-inline: var(--outer-inline-padding);
+      }
+
+      ul {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
     }
   }
 </style>
