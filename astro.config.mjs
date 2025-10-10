@@ -9,6 +9,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: font.fontName,
       cssVariable: font.cssVariable,
+      weights: ["100 900"],
     })),
   },
 });
