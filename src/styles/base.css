@@ -36,6 +36,8 @@
 	--emerald: #00cdb8;
 	--emerald-dark: #00a79d;
 
+  --forms-accent-color: deeppink;
+
 	--color-primary: var(--emerald);
 	--color-primary-light: var(--light-emerald);
 
@@ -86,6 +88,7 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   margin: 0;
+  accent-color: var(--forms-accent-color);
 }
 
 main {

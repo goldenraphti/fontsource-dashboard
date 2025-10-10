@@ -13,6 +13,7 @@ const defaultFontPreviewSize = 2;
   <div id="font-weight">
     <label for="font-preview-weight">Font Weight</label>
     <input id="font-preview-weight" type="range" min="100" max="900" step="100" value="400">
+    <p>⚠️ Beware, the "weight" preview is flawed at the moment. Better go to the original font page.</p>
   </div>
   <div id="font-italic">
     <label for="font-preview-italic">Italic</label>
@@ -51,6 +52,10 @@ const defaultFontPreviewSize = 2;
       flex-direction: column;
       align-items: start;
       width: 15rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
     }
   }
 
