@@ -16,20 +16,22 @@ const { fontToPreview } = Astro.props;
   </summary>
   <ul>
     <li><a href={fontToPreview.urlPreview}>Preview 🔗</a></li>
-    <li><strong>font categories:</strong> {fontToPreview.fontCategories.join(", ")}</li>
-    {fontToPreview?.tags?.length && (<li><strong>tags:</strong> {fontToPreview.tags?.join(", ")}</li>)}
+    <li><strong>Categories:</strong> {fontToPreview.fontCategories.join(", ")}</li>
+    {fontToPreview?.tags?.length && (<li><strong>Tags:</strong> {fontToPreview.tags?.join(", ")}</li>)}
   </ul>
 </details>
 
 <style>
   details {
     --outer-inline-padding: 2rem;
+    --outer-block-padding: 1.5rem;
     width: fit-content;
     border: 1px solid var(--bg-color-accent);
     border-radius: 0.5rem;
+    height: auto;
 
     summary {
-      padding: 1.5rem var(--outer-inline-padding);
+      padding: var(--outer-block-padding) var(--outer-inline-padding);
       margin: 0;
       font-size: 1.5rem;
       cursor: pointer;
@@ -41,16 +43,27 @@ const { fontToPreview } = Astro.props;
       }
 
     }
-    &:open {
-      & > *:not(summary) {
-        padding-inline: var(--outer-inline-padding);
-      }
 
-      ul {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
+    &::details-content {
+      opacity: 0;
+      block-size: 0;
+      overflow-y: clip;
+      transition: content-visibility 0.2s allow-discrete, opacity 0.2s, block-size 0.2s;
+      transition-timing-function: ease-in-out;
+      padding-inline: var(--outer-inline-padding);
+    }
+
+    & ul {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    &[open]::details-content {
+      opacity: 1;
+      block-size: auto;
+      overflow: clip; /* Clip off contents while animating */
+      padding-block-end: var(--outer-block-padding);
     }
   }
 </style>

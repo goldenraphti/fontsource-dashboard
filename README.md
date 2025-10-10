@@ -1,46 +1,13 @@
-# Astro Starter Kit: Basics
+# Fonts Dashboard
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Roadmap
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [ ] add range at top of list to be able to play with font-size (use input range combined with css variable)
+- [ ] add font-weight selector (beware with variable fonts)
+- [ ] add font-style (italic) selector (beware with variable fonts)
+- [ ] add more fonts
+- [ ] add selectors for categories, tags, variable (use signals) to filter
+- [ ] add search field to filter
+- [ ] add possibility to add tags to fonts
+- [ ] deploy (as subdomain of raphaelferrand.com) and marketing
+- [ ] SEO
