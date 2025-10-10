@@ -33,7 +33,9 @@ const { fontToPreview } = Astro.props;
     summary {
       padding: var(--outer-block-padding) var(--outer-inline-padding);
       margin: 0;
-      font-size: 1.5rem;
+      font-size: var(--font-size-preview, 1.5rem);
+      font-weight: var(--font-weight-preview, 400);
+      font-style: var(--font-italic-preview, normal);
       cursor: pointer;
       list-style: none;
 

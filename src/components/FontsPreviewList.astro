@@ -1,9 +1,28 @@
 ---
 import FontPreview from '../components/FontPreview.astro';
 import { fontsList } from "../content/fonts-list"
+
+const defaultFontPreviewSize = 2;
 ---
 
-<div>
+<form>
+  <div id="font-size">
+    <label for="font-preview-size">Font Preview Size</label>
+    <input id="font-preview-size" type="range" min="1" max="4" step="0.1" value={defaultFontPreviewSize}>
+  </div>
+  <div id="font-weight">
+    <label for="font-preview-weight">Font Weight</label>
+    <input id="font-preview-weight" type="range" min="100" max="900" step="100" value="400">
+  </div>
+  <div id="font-italic">
+    <label for="font-preview-italic">Italic</label>
+    <input id="font-preview-italic" type="checkbox">
+  </div>
+</form>
+
+<script src="../scripts/fonts-preview-list.ts"></script>
+
+<div id="fonts-preview-list" >
   <ul>
     {fontsList.map(font => (
       <li>
@@ -13,12 +32,25 @@ import { fontsList } from "../content/fonts-list"
 </div>
 
 <style>
-  div {
-    padding: 5rem 2rem;
-
-  }
-  ul  {
+  form {
+    padding: 3rem 2rem;
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 15rem;
+    }
+  }
+
+  div#fonts-preview-list {
+    padding: 1rem 2rem;
+
+    ul  {
+      display: grid;
+      gap: 2rem;
+    }
   }
 </style>
