@@ -10,7 +10,7 @@ interface Props {
 const { fontToPreview } = Astro.props;
 ---
 <Font cssVariable={fontToPreview.cssVariable} preload />
-<details>
+<details font-name={fontToPreview.fontName} font-categories={fontToPreview.fontCategories.join(", ")} font-tags={fontToPreview?.tags?.join(", ") ?? ""} >
   <summary>
     <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
   </summary>

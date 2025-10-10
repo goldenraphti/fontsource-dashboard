@@ -18,6 +18,15 @@ const defaultFontPreviewSize = 2;
     <label for="font-preview-italic">Italic</label>
     <input id="font-preview-italic" type="checkbox">
   </div>
+  <div id="font-categories">
+      <div id="font-preview-categories">
+        <label><input type="checkbox" name="font-category" value="serif"> Serif</label>
+        <label><input type="checkbox" name="font-category" value="sans-serif"> Sans Serif</label>
+        <label><input type="checkbox" name="font-category" value="display"> Display</label>
+        <label><input type="checkbox" name="font-category" value="handwriting"> Handwriting</label>
+        <label><input type="checkbox" name="font-category" value="monospace"> Monospace</label>
+      </div>
+  </div>
 </form>
 
 <script src="../scripts/fonts-preview-list.ts"></script>
@@ -51,6 +60,10 @@ const defaultFontPreviewSize = 2;
     ul  {
       display: grid;
       gap: 2rem;
+
+      & li:has(details[hidden]) {
+        display: none;
+      }
     }
   }
 </style>
