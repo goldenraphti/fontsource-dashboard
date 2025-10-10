@@ -1,0 +1,24 @@
+---
+import FontPreview from '../components/FontPreview.astro';
+import { fontsList } from "../content/fonts-list"
+---
+
+<div>
+  <ul>
+    {fontsList.map(font => (
+      <li>
+        <FontPreview fontToPreview={font} />
+      </li>))}
+  </ul>
+</div>
+
+<style>
+  div {
+    padding: 5rem 2rem;
+
+  }
+  ul  {
+    display: grid;
+    gap: 2rem;
+  }
+</style>

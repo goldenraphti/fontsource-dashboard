@@ -1,34 +1,70 @@
-export type Font = {
+export type FontType = {
   fontName: string;
   fontCategories: string[];
   urlPreview: string;
-  urlCDN: string;
   isVariable?: boolean;
   tags?: string[];
+  fontFamily: string;
+  cssVariable: string;
 };
 
-// https://fontsource.org/fonts/space-grotesk/
-// https://fontsource.org/fonts/geologica
-// https://fontsource.org/fonts/lexend-deca
-// https://fontsource.org/fonts/silkscreen
 // https://fontsource.org/fonts/eb-garamond
 // https://fontsource.org/fonts/crimson-pro
 // https://fontsource.org/fonts/nunito
-export const fontsList: Font[] = [
+export const fontsList: FontType[] = [
+  {
+    fontName: "Silkscreen",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/silkscreen",
+    fontFamily: "'Silkscreen', system-ui",
+    cssVariable: "--font-silkscreen",
+  },
   {
     fontName: "Space Grotesk",
     fontCategories: ["sans-serif"],
     urlPreview: "https://fontsource.org/fonts/space-grotesk",
-    urlCDN:
-      "https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk:vf@latest/latin-wght-normal.woff2",
     isVariable: true,
+    fontFamily: "'Space Grotesk Variable', sans-serif",
+    cssVariable: "--font-space-grotesk",
   },
   {
     fontName: "Geologica",
     fontCategories: ["sans-serif"],
     urlPreview: "https://fontsource.org/fonts/geologica",
-    urlCDN:
-      "https://cdn.jsdelivr.net/fontsource/fonts/geologica:vf@latest/latin-wght-normal.woff2",
     isVariable: false,
+    fontFamily: "'Geologica Variable', sans-serif",
+    cssVariable: "--font-geologica",
+  },
+  {
+    fontName: "Lexend Deca",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/lexend-deca",
+    isVariable: true,
+    fontFamily: "'Lexend Deca Variable', sans-serif",
+    cssVariable: "--font-lexend-deca",
+  },
+  {
+    fontName: "EB Garamond",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/eb-garamond",
+    isVariable: true,
+    fontFamily: "'EB Garamond Variable', serif",
+    cssVariable: "--font-eb-garamond",
+  },
+  {
+    fontName: "Crimson Pro",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/crimson-pro",
+    isVariable: true,
+    fontFamily: "'Crimson Pro Variable', serif",
+    cssVariable: "--font-crimson-pro",
+  },
+  {
+    fontName: "Nunito",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/nunito",
+    isVariable: true,
+    fontFamily: "'Nunito Variable', sans-serif",
+    cssVariable: "--font-nunito",
   },
 ];

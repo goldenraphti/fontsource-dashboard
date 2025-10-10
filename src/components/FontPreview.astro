@@ -1,0 +1,29 @@
+---
+import { Font } from 'astro:assets';
+import type {FontType} from '../content/fonts-list';
+
+interface Props {
+  fontToPreview: FontType
+}
+
+const { fontToPreview } = Astro.props;
+---
+<Font cssVariable={fontToPreview.cssVariable} preload />
+<div>
+  <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
+</div>
+
+<style>
+  div {
+    width: fit-content;
+    border: 1px solid var(--bg-color-accent);
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+
+    p {
+      margin: 0;
+      font-family: var(--font-family);
+      font-size: 1.5rem;
+    }
+  }
+</style>
