@@ -19,3 +19,10 @@
 - [ ] marketing
 - [ ] add feature possible for users to suggest new quality fonts to be added to the dashboard
 - [ ] can we optimize the font load by loading only subset (not sure if the Astro Font experimental API offers that as of now, but when possible then it'd be great to save bandwidth and speed up load times)
+- [ ] make it a PWA
+- [ ] add dark mode toggle
+- [ ] add animations/transitions to make it feel more alive
+- [ ] add ability to switch between grid view and list view
+- [ ] add ability to sort fonts by different criteria (e.g. popularity, date added, alphabetical, etc.)
+- [ ] add ability to search fonts by tags
+- [ ] add ability to preview custom text input by the user
