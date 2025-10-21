@@ -8,9 +8,85 @@ export type FontType = {
   cssVariable: string;
 };
 
-// https://fontsource.org/fonts/eb-garamond
-// https://fontsource.org/fonts/crimson-pro
-// https://fontsource.org/fonts/nunito
+// https://fontsource.org/fonts/noto-sans
+// https://fontsource.org/fonts/noto-serif
+// https://fontsource.org/fonts/overpass
+// https://fontsource.org/fonts/cairo
+// https://fontsource.org/fonts/arvo
+// https://fontsource.org/fonts/vidaloka
+// https://fontsource.org/fonts/merriweather-sans
+// https://fontsource.org/fonts/azeret-mono
+// https://fontsource.org/fonts/inconsolata
+// https://fontsource.org/fonts/poppins
+// https://fontsource.org/fonts/bodoni-moda
+// https://fontsource.org/fonts/raleway-dots
+// https://fontsource.org/fonts/rubik-mono-one
+// https://fontsource.org/fonts/black-han-sans
+// https://fontsource.org/fonts/paytone-one
+// https://fontsource.org/fonts/bagnard
+// https://fontsource.org/fonts/marko-one
+// https://fontsource.org/fonts/suez-one
+// https://fontsource.org/fonts/gloock
+// https://fontsource.org/fonts/ultra
+// https://fontsource.org/fonts/eczar
+// https://fontsource.org/fonts/righteous
+// https://fontsource.org/fonts/bowlby-one-sc
+// https://fontsource.org/fonts/titan-one
+// https://fontsource.org/fonts/akaya-telivigala
+// https://fontsource.org/fonts/bagel-fat-one
+// https://fontsource.org/fonts/rowdies
+// https://fontsource.org/fonts/turret-road
+// https://fontsource.org/fonts/rubik-glitch
+// https://fontsource.org/fonts/rubik-moonrocks
+// https://fontsource.org/fonts/funnel-display
+// https://fontsource.org/fonts/chivo
+// https://fontsource.org/fonts/cormorant-garamond
+// https://fontsource.org/fonts/cormorant
+// https://fontsource.org/fonts/rammetto-one
+// https://fontsource.org/fonts/sigmar-one
+// https://fontsource.org/fonts/yeseva-one
+// https://fontsource.org/fonts/grandstander
+// https://fontsource.org/fonts/staatliches
+// https://fontsource.org/fonts/calistoga
+// https://fontsource.org/fonts/alfa-slab-one
+// https://fontsource.org/fonts/dela-gothic-one
+// https://fontsource.org/fonts/changa-one
+// https://fontsource.org/fonts/rubik
+// https://fontsource.org/fonts/outfit
+// https://fontsource.org/fonts/lexend
+// https://fontsource.org/fonts/josefin-sans
+// https://fontsource.org/fonts/krona-one
+// https://fontsource.org/fonts/redaction-10
+// https://fontsource.org/fonts/redaction
+// https://fontsource.org/fonts/fraunces
+// https://fontsource.org/fonts/tilt-warp
+// https://fontsource.org/fonts/sansita-swashed
+// https://fontsource.org/fonts/climate-crisis
+// https://fontsource.org/fonts/inter
+// https://fontsource.org/fonts/bricolage-grotesque
+// https://fontsource.org/fonts/sora
+// https://fontsource.org/fonts/libre-bodoni
+// https://fontsource.org/fonts/lora
+// https://fontsource.org/fonts/suranna
+// https://fontsource.org/fonts/spectral
+// https://fontsource.org/fonts/piazzolla
+// https://fontsource.org/fonts/brygada-1918
+// https://fontsource.org/fonts/victor-mono
+// https://fontsource.org/fonts/cutive-mono
+// https://fontsource.org/fonts/special-elite
+// https://fontsource.org/fonts/space-mono
+// https://fontsource.org/fonts/courier-prime
+// https://fontsource.org/fonts/anonymous-pro
+// https://fontsource.org/fonts/share-tech-mono
+// https://fontsource.org/fonts/vt323
+// https://fontsource.org/fonts/jetbrains-mono
+// https://fontsource.org/fonts/work-sans
+// https://fontsource.org/fonts/public-sans
+// https://fontsource.org/fonts/italiana
+// https://fontsource.org/fonts/modak
+// https://fontsource.org/fonts/unifrakturmaguntia
+// https://fontsource.org/fonts/goldman
+
 export const fontsList: FontType[] = [
   {
     fontName: "Silkscreen",
@@ -66,5 +142,562 @@ export const fontsList: FontType[] = [
     isVariable: true,
     fontFamily: "'Nunito Variable', sans-serif",
     cssVariable: "--font-nunito",
+  },
+  {
+    fontName: "Noto Sans",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/noto-sans",
+    isVariable: true,
+    fontFamily: "'Noto Sans Variable', sans-serif",
+    cssVariable: "--font-noto-sans",
+  },
+  {
+    fontName: "Noto Serif",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/noto-serif",
+    isVariable: true,
+    fontFamily: "'Noto Serif Variable', serif",
+    cssVariable: "--font-noto-serif",
+  },
+  {
+    fontName: "Overpass",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/overpass",
+    isVariable: true,
+    fontFamily: "'Overpass Variable', sans-serif",
+    cssVariable: "--font-overpass",
+  },
+  {
+    fontName: "Cairo",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/cairo",
+    isVariable: true,
+    fontFamily: "'Cairo Variable', sans-serif",
+    cssVariable: "--font-cairo",
+  },
+  {
+    fontName: "Arvo",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/arvo",
+    isVariable: true,
+    fontFamily: "'Arvo Variable', serif",
+    cssVariable: "--font-arvo",
+  },
+  {
+    fontName: "Vidaloka",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/vidaloka",
+    isVariable: true,
+    fontFamily: "'Vidaloka Variable', serif",
+    cssVariable: "--font-vidaloka",
+  },
+  {
+    fontName: "Merriweather Sans",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/merriweather-sans",
+    isVariable: true,
+    fontFamily: "'Merriweather Sans Variable', sans-serif",
+    cssVariable: "--font-merriweather-sans",
+  },
+  {
+    fontName: "Azeret Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/azeret-mono",
+    isVariable: true,
+    fontFamily: "'Azeret Mono Variable', monospace",
+    cssVariable: "--font-azeret-mono",
+  },
+  {
+    fontName: "Inconsolata",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/inconsolata",
+    isVariable: true,
+    fontFamily: "'Inconsolata Variable', monospace",
+    cssVariable: "--font-inconsolata",
+  },
+  {
+    fontName: "Poppins",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/poppins",
+    isVariable: true,
+    fontFamily: "'Poppins Variable', sans-serif",
+    cssVariable: "--font-poppins",
+  },
+  {
+    fontName: "Bodoni Moda",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/bodoni-moda",
+    isVariable: true,
+    fontFamily: "'Bodoni Moda Variable', serif",
+    cssVariable: "--font-bodoni-moda",
+  },
+  {
+    fontName: "Raleway Dots",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/raleway-dots",
+    fontFamily: "'Raleway Dots', display",
+    cssVariable: "--font-raleway-dots",
+  },
+  {
+    fontName: "Rubik Mono One",
+    fontCategories: ["monospace", "display"],
+    urlPreview: "https://fontsource.org/fonts/rubik-mono-one",
+    fontFamily: "'Rubik Mono One', monospace",
+    cssVariable: "--font-rubik-mono-one",
+  },
+  {
+    fontName: "Black Han Sans",
+    fontCategories: ["sans-serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/black-han-sans",
+    fontFamily: "'Black Han Sans', sans-serif",
+    cssVariable: "--font-black-han-sans",
+  },
+  {
+    fontName: "Paytone One",
+    fontCategories: ["sans-serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/paytone-one",
+    fontFamily: "'Paytone One', sans-serif",
+    cssVariable: "--font-paytone-one",
+  },
+  {
+    fontName: "Bagnard",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/bagnard",
+    fontFamily: "'Bagnard', display",
+    cssVariable: "--font-bagnard",
+  },
+  {
+    fontName: "Marko One",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/marko-one",
+    fontFamily: "'Marko One', serif",
+    cssVariable: "--font-marko-one",
+  },
+  {
+    fontName: "Suez One",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/suez-one",
+    fontFamily: "'Suez One', serif",
+    cssVariable: "--font-suez-one",
+  },
+  {
+    fontName: "Gloock",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/gloock",
+    fontFamily: "'Gloock', serif",
+    cssVariable: "--font-gloock",
+  },
+  {
+    fontName: "Ultra",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/ultra",
+    fontFamily: "'Ultra', serif",
+    cssVariable: "--font-ultra",
+  },
+  {
+    fontName: "Eczar",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/eczar",
+    fontFamily: "'Eczar', serif",
+    cssVariable: "--font-eczar",
+  },
+  {
+    fontName: "Righteous",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/righteous",
+    fontFamily: "'Righteous', display",
+    cssVariable: "--font-righteous",
+  },
+  {
+    fontName: "Bowlby One SC",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/bowlby-one-sc",
+    fontFamily: "'Bowlby One SC', display",
+    cssVariable: "--font-bowlby-one-sc",
+  },
+  {
+    fontName: "Titan One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/titan-one",
+    fontFamily: "'Titan One', display",
+    cssVariable: "--font-titan-one",
+  },
+  {
+    fontName: "Akaya Telivigala",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/akaya-telivigala",
+    fontFamily: "'Akaya Telivigala', display",
+    cssVariable: "--font-akaya-telivigala",
+  },
+  {
+    fontName: "Bagel Fat One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/bagel-fat-one",
+    fontFamily: "'Bagel Fat One', display",
+    cssVariable: "--font-bagel-fat-one",
+  },
+  {
+    fontName: "Rowdies",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/rowdies",
+    fontFamily: "'Rowdies', display",
+    cssVariable: "--font-rowdies",
+  },
+  {
+    fontName: "Turret Road",
+    fontCategories: ["monospace", "display"],
+    urlPreview: "https://fontsource.org/fonts/turret-road",
+    fontFamily: "'Turret Road', monospace",
+    cssVariable: "--font-turret-road",
+  },
+  {
+    fontName: "Rubik Glitch",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/rubik-glitch",
+    fontFamily: "'Rubik Glitch', display",
+    cssVariable: "--font-rubik-glitch",
+  },
+  {
+    fontName: "Rubik Moonrocks",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/rubik-moonrocks",
+    fontFamily: "'Rubik Moonrocks', display",
+    cssVariable: "--font-rubik-moonrocks",
+  },
+  {
+    fontName: "Funnel Display",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/funnel-display",
+    fontFamily: "'Funnel Display', display",
+    cssVariable: "--font-funnel-display",
+  },
+  {
+    fontName: "Chivo",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/chivo",
+    fontFamily: "'Chivo', sans-serif",
+    cssVariable: "--font-chivo",
+  },
+  {
+    fontName: "Cormorant Garamond",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/cormorant-garamond",
+    fontFamily: "'Cormorant Garamond', serif",
+    cssVariable: "--font-cormorant-garamond",
+  },
+  {
+    fontName: "Cormorant",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/cormorant",
+    fontFamily: "'Cormorant', serif",
+    cssVariable: "--font-cormorant",
+  },
+  {
+    fontName: "Rammetto One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/rammetto-one",
+    fontFamily: "'Rammetto One', display",
+    cssVariable: "--font-rammetto-one",
+  },
+  {
+    fontName: "Sigmar One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/sigmar-one",
+    fontFamily: "'Sigmar One', display",
+    cssVariable: "--font-sigmar-one",
+  },
+  {
+    fontName: "Yeseva One",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/yeseva-one",
+    fontFamily: "'Yeseva One', serif",
+    cssVariable: "--font-yeseva-one",
+  },
+  {
+    fontName: "Grandstander",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/grandstander",
+    fontFamily: "'Grandstander', display",
+    cssVariable: "--font-grandstander",
+  },
+  {
+    fontName: "Staatliches",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/staatliches",
+    fontFamily: "'Staatliches', display",
+    cssVariable: "--font-staatliches",
+  },
+  {
+    fontName: "Calistoga",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/calistoga",
+    fontFamily: "'Calistoga', display",
+    cssVariable: "--font-calistoga",
+  },
+  {
+    fontName: "Alfa Slab One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/alfa-slab-one",
+    fontFamily: "'Alfa Slab One', display",
+    cssVariable: "--font-alfa-slab-one",
+  },
+  {
+    fontName: "Dela Gothic One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/dela-gothic-one",
+    fontFamily: "'Dela Gothic One', display",
+    cssVariable: "--font-dela-gothic-one",
+  },
+  {
+    fontName: "Changa One",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/changa-one",
+    fontFamily: "'Changa One', display",
+    cssVariable: "--font-changa-one",
+  },
+  {
+    fontName: "Rubik",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/rubik",
+    fontFamily: "'Rubik', sans-serif",
+    cssVariable: "--font-rubik",
+  },
+  {
+    fontName: "Outfit",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/outfit",
+    fontFamily: "'Outfit', sans-serif",
+    cssVariable: "--font-outfit",
+  },
+  {
+    fontName: "Lexend",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/lexend",
+    fontFamily: "'Lexend', sans-serif",
+    cssVariable: "--font-lexend",
+  },
+  {
+    fontName: "Josefin Sans",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/josefin-sans",
+    fontFamily: "'Josefin Sans', sans-serif",
+    cssVariable: "--font-josefin-sans",
+  },
+  {
+    fontName: "Krona One",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/krona-one",
+    fontFamily: "'Krona One', sans-serif",
+    cssVariable: "--font-krona-one",
+  },
+  {
+    fontName: "Redaction 10",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/redaction-10",
+    fontFamily: "'Redaction 10', display",
+    cssVariable: "--font-redaction-10",
+  },
+  {
+    fontName: "Redaction",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/redaction",
+    fontFamily: "'Redaction', display",
+    cssVariable: "--font-redaction",
+  },
+  {
+    fontName: "Fraunces",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/fraunces",
+    fontFamily: "'Fraunces', serif",
+    cssVariable: "--font-fraunces",
+  },
+  {
+    fontName: "Tilt Warp",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/tilt-warp",
+    fontFamily: "'Tilt Warp', display",
+    cssVariable: "--font-tilt-warp",
+  },
+  {
+    fontName: "Sansita Swashed",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/sansita-swashed",
+    fontFamily: "'Sansita Swashed', display",
+    cssVariable: "--font-sansita-swashed",
+  },
+  {
+    fontName: "Climate Crisis",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/climate-crisis",
+    fontFamily: "'Climate Crisis', display",
+    cssVariable: "--font-climate-crisis",
+  },
+  {
+    fontName: "Inter",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/inter",
+    fontFamily: "'Inter', sans-serif",
+    cssVariable: "--font-inter",
+  },
+  {
+    fontName: "Bricolage Grotesque",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/bricolage-grotesque",
+    fontFamily: "'Bricolage Grotesque', sans-serif",
+    cssVariable: "--font-bricolage-grotesque",
+  },
+  {
+    fontName: "Sora",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/sora",
+    fontFamily: "'Sora', sans-serif",
+    cssVariable: "--font-sora",
+  },
+  {
+    fontName: "Libre Bodoni",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/libre-bodoni",
+    fontFamily: "'Libre Bodoni', serif",
+    cssVariable: "--font-libre-bodoni",
+  },
+  {
+    fontName: "Lora",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/lora",
+    fontFamily: "'Lora', serif",
+    cssVariable: "--font-lora",
+  },
+  {
+    fontName: "Suranna",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/suranna",
+    fontFamily: "'Suranna', serif",
+    cssVariable: "--font-suranna",
+  },
+  {
+    fontName: "Spectral",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/spectral",
+    fontFamily: "'Spectral', serif",
+    cssVariable: "--font-spectral",
+  },
+  {
+    fontName: "Piazzolla",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/piazzolla",
+    fontFamily: "'Piazzolla', serif",
+    cssVariable: "--font-piazzolla",
+  },
+  {
+    fontName: "Brygada 1918",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/brygada-1918",
+    fontFamily: "'Brygada 1918', serif",
+    cssVariable: "--font-brygada-1918",
+  },
+  {
+    fontName: "Victor Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/victor-mono",
+    fontFamily: "'Victor Mono', monospace",
+    cssVariable: "--font-victor-mono",
+  },
+  {
+    fontName: "Cutive Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/cutive-mono",
+    fontFamily: "'Cutive Mono', monospace",
+    cssVariable: "--font-cutive-mono",
+  },
+  {
+    fontName: "Special Elite",
+    fontCategories: ["monospace", "display"],
+    urlPreview: "https://fontsource.org/fonts/special-elite",
+    fontFamily: "'Special Elite', monospace",
+    cssVariable: "--font-special-elite",
+  },
+  {
+    fontName: "Space Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/space-mono",
+    fontFamily: "'Space Mono', monospace",
+    cssVariable: "--font-space-mono",
+  },
+  {
+    fontName: "Courier Prime",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/courier-prime",
+    fontFamily: "'Courier Prime', monospace",
+    cssVariable: "--font-courier-prime",
+  },
+  {
+    fontName: "Anonymous Pro",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/anonymous-pro",
+    fontFamily: "'Anonymous Pro', monospace",
+    cssVariable: "--font-anonymous-pro",
+  },
+  {
+    fontName: "Share Tech Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/share-tech-mono",
+    fontFamily: "'Share Tech Mono', monospace",
+    cssVariable: "--font-share-tech-mono",
+  },
+  {
+    fontName: "VT323",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/vt323",
+    fontFamily: "'VT323', monospace",
+    cssVariable: "--font-vt323",
+  },
+  {
+    fontName: "JetBrains Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/jetbrains-mono",
+    fontFamily: "'JetBrains Mono', monospace",
+    cssVariable: "--font-jetbrains-mono",
+  },
+  {
+    fontName: "Work Sans",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/work-sans",
+    fontFamily: "'Work Sans', sans-serif",
+    cssVariable: "--font-work-sans",
+  },
+  {
+    fontName: "Public Sans",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/public-sans",
+    fontFamily: "'Public Sans', sans-serif",
+    cssVariable: "--font-public-sans",
+  },
+  {
+    fontName: "Italiana",
+    fontCategories: ["serif", "display"],
+    urlPreview: "https://fontsource.org/fonts/italiana",
+    fontFamily: "'Italiana', serif",
+    cssVariable: "--font-italiana",
+  },
+  {
+    fontName: "Modak",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/modak",
+    fontFamily: "'Modak', display",
+    cssVariable: "--font-modak",
+  },
+  {
+    fontName: "UnifrakturMaguntia",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/unifrakturmaguntia",
+    fontFamily: "'UnifrakturMaguntia', display",
+    cssVariable: "--font-unifrakturmaguntia",
+  },
+  {
+    fontName: "Goldman",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/goldman",
+    fontFamily: "'Goldman', display",
+    cssVariable: "--font-goldman",
   },
 ];
