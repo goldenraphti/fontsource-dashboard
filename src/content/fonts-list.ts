@@ -8,85 +8,6 @@ export type FontType = {
   cssVariable: string;
 };
 
-// https://fontsource.org/fonts/noto-sans
-// https://fontsource.org/fonts/noto-serif
-// https://fontsource.org/fonts/overpass
-// https://fontsource.org/fonts/cairo
-// https://fontsource.org/fonts/arvo
-// https://fontsource.org/fonts/vidaloka
-// https://fontsource.org/fonts/merriweather-sans
-// https://fontsource.org/fonts/azeret-mono
-// https://fontsource.org/fonts/inconsolata
-// https://fontsource.org/fonts/poppins
-// https://fontsource.org/fonts/bodoni-moda
-// https://fontsource.org/fonts/raleway-dots
-// https://fontsource.org/fonts/rubik-mono-one
-// https://fontsource.org/fonts/black-han-sans
-// https://fontsource.org/fonts/paytone-one
-// https://fontsource.org/fonts/bagnard
-// https://fontsource.org/fonts/marko-one
-// https://fontsource.org/fonts/suez-one
-// https://fontsource.org/fonts/gloock
-// https://fontsource.org/fonts/ultra
-// https://fontsource.org/fonts/eczar
-// https://fontsource.org/fonts/righteous
-// https://fontsource.org/fonts/bowlby-one-sc
-// https://fontsource.org/fonts/titan-one
-// https://fontsource.org/fonts/akaya-telivigala
-// https://fontsource.org/fonts/bagel-fat-one
-// https://fontsource.org/fonts/rowdies
-// https://fontsource.org/fonts/turret-road
-// https://fontsource.org/fonts/rubik-glitch
-// https://fontsource.org/fonts/rubik-moonrocks
-// https://fontsource.org/fonts/funnel-display
-// https://fontsource.org/fonts/chivo
-// https://fontsource.org/fonts/cormorant-garamond
-// https://fontsource.org/fonts/cormorant
-// https://fontsource.org/fonts/rammetto-one
-// https://fontsource.org/fonts/sigmar-one
-// https://fontsource.org/fonts/yeseva-one
-// https://fontsource.org/fonts/grandstander
-// https://fontsource.org/fonts/staatliches
-// https://fontsource.org/fonts/calistoga
-// https://fontsource.org/fonts/alfa-slab-one
-// https://fontsource.org/fonts/dela-gothic-one
-// https://fontsource.org/fonts/changa-one
-// https://fontsource.org/fonts/rubik
-// https://fontsource.org/fonts/outfit
-// https://fontsource.org/fonts/lexend
-// https://fontsource.org/fonts/josefin-sans
-// https://fontsource.org/fonts/krona-one
-// https://fontsource.org/fonts/redaction-10
-// https://fontsource.org/fonts/redaction
-// https://fontsource.org/fonts/fraunces
-// https://fontsource.org/fonts/tilt-warp
-// https://fontsource.org/fonts/sansita-swashed
-// https://fontsource.org/fonts/climate-crisis
-// https://fontsource.org/fonts/inter
-// https://fontsource.org/fonts/bricolage-grotesque
-// https://fontsource.org/fonts/sora
-// https://fontsource.org/fonts/libre-bodoni
-// https://fontsource.org/fonts/lora
-// https://fontsource.org/fonts/suranna
-// https://fontsource.org/fonts/spectral
-// https://fontsource.org/fonts/piazzolla
-// https://fontsource.org/fonts/brygada-1918
-// https://fontsource.org/fonts/victor-mono
-// https://fontsource.org/fonts/cutive-mono
-// https://fontsource.org/fonts/special-elite
-// https://fontsource.org/fonts/space-mono
-// https://fontsource.org/fonts/courier-prime
-// https://fontsource.org/fonts/anonymous-pro
-// https://fontsource.org/fonts/share-tech-mono
-// https://fontsource.org/fonts/vt323
-// https://fontsource.org/fonts/jetbrains-mono
-// https://fontsource.org/fonts/work-sans
-// https://fontsource.org/fonts/public-sans
-// https://fontsource.org/fonts/italiana
-// https://fontsource.org/fonts/modak
-// https://fontsource.org/fonts/unifrakturmaguntia
-// https://fontsource.org/fonts/goldman
-
 export const fontsList: FontType[] = [
   {
     fontName: "Silkscreen",
@@ -699,5 +620,19 @@ export const fontsList: FontType[] = [
     urlPreview: "https://fontsource.org/fonts/goldman",
     fontFamily: "'Goldman', display",
     cssVariable: "--font-goldman",
+  },
+  {
+    fontName: "DSEG14 Classic",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/dseg14-classic",
+    fontFamily: "'DSEG14 Classic', display",
+    cssVariable: "--font-dseg14-classic",
+  },
+  {
+    fontName: "DSEG14 Modern",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/dseg14-modern",
+    fontFamily: "'DSEG14 Modern', display",
+    cssVariable: "--font-dseg14-modern",
   },
 ];
