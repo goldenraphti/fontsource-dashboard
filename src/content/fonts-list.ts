@@ -8,6 +8,15 @@ export type FontType = {
   cssVariable: string;
 };
 
+// https://fontsource.org/fonts/fusion-pixel-10px-monospaced-kr
+// https://fontsource.org/fonts/fira-mono
+// https://fontsource.org/fonts/dm-mono
+// https://fontsource.org/fonts/jetbrains-mono
+// https://fontsource.org/fonts/ibm-plex-mono
+// https://fontsource.org/fonts/ibm-plex-serif
+// https://fontsource.org/fonts/ibm-plex-sans
+// https://fontsource.org/fonts/lato
+
 export const fontsList: FontType[] = [
   {
     fontName: "Silkscreen",
@@ -634,5 +643,61 @@ export const fontsList: FontType[] = [
     urlPreview: "https://fontsource.org/fonts/dseg14-modern",
     fontFamily: "'DSEG14 Modern', display",
     cssVariable: "--font-dseg14-modern",
+  },
+  {
+    fontName: "Fusion Pixel 10px Monospaced KR",
+    fontCategories: ["monospace", "display"],
+    urlPreview: "https://fontsource.org/fonts/fusion-pixel-10px-monospaced-kr",
+    fontFamily: "'Fusion Pixel 10px Monospaced KR', monospace",
+    cssVariable: "--font-fusion-pixel-10px-monospaced-kr",
+  },
+  {
+    fontName: "Fira Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/fira-mono",
+    fontFamily: "'Fira Mono', monospace",
+    cssVariable: "--font-fira-mono",
+  },
+  {
+    fontName: "DM Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/dm-mono",
+    fontFamily: "'DM Mono', monospace",
+    cssVariable: "--font-dm-mono",
+  },
+  {
+    fontName: "JetBrains Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/jetbrains-mono",
+    fontFamily: "'JetBrains Mono', monospace",
+    cssVariable: "--font-jetbrains-mono",
+  },
+  {
+    fontName: "IBM Plex Mono",
+    fontCategories: ["monospace"],
+    urlPreview: "https://fontsource.org/fonts/ibm-plex-mono",
+    fontFamily: "'IBM Plex Mono', monospace",
+    cssVariable: "--font-ibm-plex-mono",
+  },
+  {
+    fontName: "IBM Plex Serif",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/ibm-plex-serif",
+    fontFamily: "'IBM Plex Serif', serif",
+    cssVariable: "--font-ibm-plex-serif",
+  },
+  {
+    fontName: "IBM Plex Sans",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/ibm-plex-sans",
+    fontFamily: "'IBM Plex Sans', sans-serif",
+    cssVariable: "--font-ibm-plex-sans",
+  },
+  {
+    fontName: "Lato",
+    fontCategories: ["sans-serif"],
+    urlPreview: "https://fontsource.org/fonts/lato",
+    fontFamily: "'Lato', sans-serif",
+    cssVariable: "--font-lato",
   },
 ];
