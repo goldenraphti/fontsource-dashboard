@@ -1,9 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FontsPreviewList from '../components/FontsPreviewList.astro';
+import Logo from '../components/Logo.astro';
 ---
 
 <Layout title="Fonts Dashboard" isHomepage={true}>
-	<h1>Fonts Dashboard</h1>
+	<div>
+		<Logo />
+		<h1>Fonts Dashboard</h1>
+	</div>
 	<FontsPreviewList />
 </Layout>
+
+<style>
+	div:has(> h1) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		margin-block-start: 7rem;
+		margin-block-end: 4rem;
+
+		& > * {
+			margin: 0;
+		}
+	}
+</style>

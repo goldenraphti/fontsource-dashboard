@@ -3,7 +3,7 @@ import { useHamburgerMenu, hasBorderBottomTopbar, isTopbarFixed } from '../site-
 import Hamburger from '../icons/hamburger.svg';
 import StarBookmark from '../icons/StarBookmark.svg';
 import Enveloppe from '../icons/enveloppe.svg';
-import Logo from '../logos/Logo.astro';
+import Logo from '../components/Logo.astro';
 
 const navLinks = [
   {
@@ -27,7 +27,7 @@ const currentUrl = Astro.url.pathname;
   <a href="/" class="logo" transition:name="h1-title">
     <span class="visually-hidden">Home</span>
     Home
-    <Logo logoChosen="tagline" />
+    <!-- <Logo logoChosen="tagline" /> -->
   </a>
   <nav transition:name="header-links">
     {
