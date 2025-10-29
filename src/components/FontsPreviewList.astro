@@ -1,31 +1,47 @@
 ---
 import FontPreview from '../components/FontPreview.astro';
 import { fontsList } from "../content/fonts-list"
+import FilterIcon from '../icons/funnel-sort.svg';
+import FontsStyleCustomization from '../icons/horizontal-sliders-lines.svg';
 
 const defaultFontPreviewSize = 2;
 ---
 
-<form>
-  <div id="font-size">
-    <label for="font-preview-size">Font Preview Size</label>
-    <input id="font-preview-size" type="range" min="1" max="4" step="0.1" value={defaultFontPreviewSize}>
+<form id="fonts-filtering">
+  <p class="form-description">
+    <FilterIcon />
+    <span>Fonts filtering</span>
+  </p>
+  <div class="inputs-wrapper">
+    <div id="font-categories">
+        <div id="font-preview-categories">
+          <label><input type="checkbox" name="font-category" value="serif"> Serif</label>
+          <label><input type="checkbox" name="font-category" value="sans-serif"> Sans Serif</label>
+          <label><input type="checkbox" name="font-category" value="display"> Display</label>
+          <label><input type="checkbox" name="font-category" value="handwriting"> Handwriting</label>
+          <label><input type="checkbox" name="font-category" value="monospace"> Monospace</label>
+        </div>
+    </div>
   </div>
-  <div id="font-weight">
-    <label for="font-preview-weight">Font Weight</label>
-    <input id="font-preview-weight" type="range" min="100" max="900" step="100" value="400">
-  </div>
-  <div id="font-italic">
-    <label for="font-preview-italic">Italic</label>
-    <input id="font-preview-italic" type="checkbox">
-  </div>
-  <div id="font-categories">
-      <div id="font-preview-categories">
-        <label><input type="checkbox" name="font-category" value="serif"> Serif</label>
-        <label><input type="checkbox" name="font-category" value="sans-serif"> Sans Serif</label>
-        <label><input type="checkbox" name="font-category" value="display"> Display</label>
-        <label><input type="checkbox" name="font-category" value="handwriting"> Handwriting</label>
-        <label><input type="checkbox" name="font-category" value="monospace"> Monospace</label>
-      </div>
+</form>
+<form id="fonts-preview-customization">
+  <p class="form-description">
+    <FontsStyleCustomization />
+    <span>Fonts preview customization</span>
+  </p>
+  <div class="inputs-wrapper">
+    <div id="font-size">
+      <label for="font-preview-size">Font Preview Size</label>
+      <input id="font-preview-size" type="range" min="1" max="4" step="0.1" value={defaultFontPreviewSize}>
+    </div>
+    <div id="font-weight">
+      <label for="font-preview-weight">Font Weight</label>
+      <input id="font-preview-weight" type="range" min="100" max="900" step="100" value="400">
+    </div>
+    <div id="font-italic">
+      <label for="font-preview-italic">Italic</label>
+      <input id="font-preview-italic" type="checkbox">
+    </div>
   </div>
 </form>
 
@@ -42,19 +58,50 @@ const defaultFontPreviewSize = 2;
 
 <style>
   form {
-    padding: 3rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 1.5rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    outline: 1px solid currentColor;
+    border-radius: 1.5rem;
+    color: var(--primary-1);
 
-    div {
+    background-color: color-mix(in oklab,white,transparent 50%);
+    backdrop-filter: blur(10px);
+
+    & > p.form-description {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-style: oblique;
       display: flex;
-      flex-direction: column;
-      align-items: start;
-      width: 15rem;
+      align-items: centr;
+
+      & > svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-inline-end: 0.5rem;
+        opacity: 0.7;
+      }
     }
 
-    input[type="range"] {
+    div.inputs-wrapper {
       width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 15rem;
+      }
+
+      input[type="range"] {
+        width: 100%;
+      }
     }
   }
 
