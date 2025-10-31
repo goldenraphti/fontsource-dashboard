@@ -14,6 +14,7 @@ const defaultFontPreviewSize = 2;
   </p>
   <div class="inputs-wrapper">
     <div id="font-categories">
+      <p class="input-description">Categories</p>
         <div id="font-preview-categories">
           <label><input type="checkbox" name="font-category" value="serif"> Serif</label>
           <label><input type="checkbox" name="font-category" value="sans-serif"> Sans Serif</label>
@@ -21,7 +22,11 @@ const defaultFontPreviewSize = 2;
           <label><input type="checkbox" name="font-category" value="handwriting"> Handwriting</label>
           <label><input type="checkbox" name="font-category" value="monospace"> Monospace</label>
         </div>
-    </div>
+      </div>
+      <div id="font-preview-name-filter">
+        <label for="font-name-filter" class="input-description">Filter by font name</label>
+        <input type="text" id="font-name-filter" placeholder="Filter by font name">
+      </div>
   </div>
 </form>
 <form id="fonts-preview-customization">
@@ -45,7 +50,8 @@ const defaultFontPreviewSize = 2;
   </div>
 </form>
 
-<script src="../scripts/fonts-preview-list.ts"></script>
+<script src="../scripts/fonts-preview-styling.ts"></script>
+<script src="../scripts/fonts-preview-filtering.ts"></script>
 
 <div id="fonts-preview-list" >
   <ul>
@@ -116,5 +122,10 @@ const defaultFontPreviewSize = 2;
         display: none;
       }
     }
+  }
+
+  .input-description {
+    font-weight: bold;
+    margin-block-end: 0.5rem;
   }
 </style>
