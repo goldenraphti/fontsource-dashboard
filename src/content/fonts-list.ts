@@ -766,4 +766,18 @@ export const fontsList: FontType[] = [
     fontFamily: "'Bungee Outline', display",
     cssVariable: "--font-bungee-outline",
   },
+  {
+    fontName: "Libre Caslon Text",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/libre-caslon-text",
+    fontFamily: "'Libre Caslon Text', serif",
+    cssVariable: "--font-libre-caslon-text",
+  },
+  {
+    fontName: "Spectral",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/spectral",
+    fontFamily: "'Spectral', serif",
+    cssVariable: "--font-spectral",
+  },
 ];
