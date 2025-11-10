@@ -10,6 +10,7 @@ export default defineConfig({
       name: font.fontName,
       cssVariable: font.cssVariable,
       weights: ["100 900"],
+      styles: font.disableItalic ? ["normal"] : ["normal", "italic"],
     })),
   },
 });

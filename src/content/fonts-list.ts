@@ -6,16 +6,8 @@ export type FontType = {
   tags?: string[];
   fontFamily: string;
   cssVariable: string;
+  disableItalic?: boolean;
 };
-
-// https://fontsource.org/fonts/fusion-pixel-10px-monospaced-kr
-// https://fontsource.org/fonts/fira-mono
-// https://fontsource.org/fonts/dm-mono
-// https://fontsource.org/fonts/jetbrains-mono
-// https://fontsource.org/fonts/ibm-plex-mono
-// https://fontsource.org/fonts/ibm-plex-serif
-// https://fontsource.org/fonts/ibm-plex-sans
-// https://fontsource.org/fonts/lato
 
 export const fontsList: FontType[] = [
   {
@@ -772,6 +764,7 @@ export const fontsList: FontType[] = [
     urlPreview: "https://fontsource.org/fonts/libre-caslon-text",
     fontFamily: "'Libre Caslon Text', serif",
     cssVariable: "--font-libre-caslon-text",
+    disableItalic: true,
   },
   {
     fontName: "Spectral",
