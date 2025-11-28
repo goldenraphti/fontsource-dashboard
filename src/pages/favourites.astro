@@ -6,8 +6,8 @@ import Logo from '../components/Logo.astro';
 
 <Layout title="Favourites - Fonts Dashboard" isHomepage={false}>
 	<div>
-		<Logo />
-		<h1>Favourites</h1>
+		<Logo small={true}  />
+		<h1 transition:name="h1-title-favourites">My Favourites</h1>
 	</div>
 	<div data-filtered-fonts-list-favourites>
 		<FontsPreviewList showFontsFilteringForm={false} showFontsPreviewCustomizationForm={false} />
