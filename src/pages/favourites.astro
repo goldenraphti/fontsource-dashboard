@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FontsPreviewList from '../components/FontsPreviewList.astro';
+import Logo from '../components/Logo.astro';
+---
+
+<Layout title="Favourites - Fonts Dashboard" isHomepage={false}>
+	<div>
+		<Logo />
+		<h1>Favourites</h1>
+	</div>
+	<div data-filtered-fonts-list-favourites>
+		<FontsPreviewList showFontsFilteringForm={false} showFontsPreviewCustomizationForm={false} />
+	</div>
+</Layout>
+
+<style>
+	div:has(> h1) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		margin-block-start: 7rem;
+		margin-block-end: 4rem;
+
+		& > * {
+			margin: 0;
+		}
+	}
+</style>

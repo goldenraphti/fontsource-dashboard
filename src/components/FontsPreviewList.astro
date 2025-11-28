@@ -5,8 +5,16 @@ import FilterIcon from '../icons/funnel-sort.svg';
 import FontsStyleCustomization from '../icons/horizontal-sliders-lines.svg';
 
 const defaultFontPreviewSize = 2;
+
+export interface Props {
+  showFontsFilteringForm?: boolean;
+  showFontsPreviewCustomizationForm?: boolean;
+}
+
+const { showFontsFilteringForm = true, showFontsPreviewCustomizationForm = true } = Astro.props;
 ---
 
+{showFontsFilteringForm && (
 <form id="fonts-filtering" action="" onsubmit="event.preventDefault()">
   <p class="form-description">
     <FilterIcon />
@@ -29,6 +37,8 @@ const defaultFontPreviewSize = 2;
       </div>
   </div>
 </form>
+)}
+{showFontsPreviewCustomizationForm && (
 <form id="fonts-preview-customization">
   <p class="form-description">
     <FontsStyleCustomization />
@@ -49,9 +59,11 @@ const defaultFontPreviewSize = 2;
     </div>
   </div>
 </form>
+)}
 
 <script src="../scripts/fonts-preview-styling.ts"></script>
 <script src="../scripts/fonts-preview-filtering.ts"></script>
+<script src="../scripts/fonts-collections-favourites.ts"></script>
 
 <div id="fonts-preview-list" >
   <ul>

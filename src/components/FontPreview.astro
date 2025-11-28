@@ -1,7 +1,10 @@
 ---
 import { Font } from 'astro:assets';
 import type {FontType} from '../content/fonts-list';
-import { toAttributeString } from 'astro/runtime/server/render/util.js';
+import Bookmark from '../icons/bookmark.svg';
+import BookmarkSolid from '../icons/bookmark-solid.svg';
+import Star from '../icons/star.svg';
+import StarFilled from '../icons/star-filled.svg';
 
 interface Props {
   fontToPreview: FontType
@@ -18,6 +21,13 @@ const { fontToPreview } = Astro.props;
     <li><a href={fontToPreview.urlPreview}>Preview 🔗</a></li>
     <li><strong>Categories:</strong> {fontToPreview.fontCategories.join(", ")}</li>
     {fontToPreview?.tags?.length && (<li><strong>Tags:</strong> {fontToPreview.tags?.join(", ")}</li>)}
+    <div class="favourites-and-collections-actions">
+      <button data-action="add-to-favourites" data-is-favourite="false"><span class="visually-hidden">Add to favourites</span>
+        <span class="is-not-favourite"><Star /></span>
+        <span class="is-favourite"><StarFilled /></span>
+      </button>
+      <button data-action="add-to-collection"><span class="visually-hidden">Add to collections</span><Bookmark /></button>
+    </div>
   </ul>
 </details>
 
@@ -67,6 +77,54 @@ const { fontToPreview } = Astro.props;
       block-size: auto;
       overflow: clip; /* Clip off contents while animating */
       padding-block-end: var(--outer-block-padding);
+    }
+
+    div.favourites-and-collections-actions {
+      display: flex;
+      gap: 1rem;
+
+      & button {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        background: none;
+        border: none;
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+
+        & svg {
+          opacity: 0.8;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: color-mix(in oklab, var(--bg-color-accent), transparent 70%);
+
+          svg {
+            scale: 1.1;
+            opacity: 1;
+          }
+        }
+
+        &[data-is-favourite="true"] {
+          .is-favourite {
+            display: inline;
+          }
+          .is-not-favourite {
+            display: none;
+          }
+        }
+        &[data-is-favourite="false"] {
+          .is-favourite {
+            display: none;
+          }
+          .is-not-favourite {
+            display: inline;
+          }
+        }
+      }
+
     }
   }
 </style>

@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource-variable/space-grotesk": "^5.2.10",
     "astro": "^5.16.2",
+    "idb": "^8.0.3",
     "signal-polyfill": "^0.2.2"
   }
 }
