@@ -2,11 +2,12 @@ import { openDB } from "idb";
 import { Signal } from "signal-polyfill";
 import { effect } from "./signal-effect.js";
 
-const listFavourites: Signal.State<any[]> = new Signal.State([]);
+export const listFavourites: Signal.State<any[]> = new Signal.State([]);
+export const listCollections: Signal.State<any[]> = new Signal.State([]);
 
 /* prepare IndexDB database for favourites and collections */
 
-const db = await openDB("FontsDashboard", 1, {
+export const db = await openDB("FontsDashboard", 1, {
   upgrade(db) {
     db.createObjectStore("collections", { keyPath: "id" });
     db.createObjectStore("favourites", { keyPath: "fontId" });
@@ -69,6 +70,21 @@ effect(() => {
   updateFavouritesBtnsUI(listFavourites.get());
 });
 
+const addToCollectionsButton = fontsPreviewList?.querySelectorAll(
+  'button[data-action="add-to-collection"]'
+);
+
+if (addToCollectionsButton?.length) {
+  for await (const btn of addToCollectionsButton) {
+    btn.addEventListener("click", async () => {
+      const fontFamilyClicked = btn
+        .closest("details")
+        ?.getAttribute("font-name");
+      if (!fontFamilyClicked) return;
+    });
+  }
+}
+
 function filterFontsListToShowFavouritesOnly() {
   const favouritesList = listFavourites.get();
   fontsPreviewList?.querySelectorAll("details").forEach((fontDetail) => {
@@ -86,4 +102,7 @@ if (document.querySelector("[data-filtered-fonts-list-favourites]")) {
   effect(() => {
     filterFontsListToShowFavouritesOnly();
   });
+  document
+    .querySelector("[data-filtered-fonts-list-favourites]")
+    ?.removeAttribute("hidden");
 }
