@@ -12,5 +12,6 @@ export default defineConfig({
       weights: ["100 900"],
       styles: font.disableItalic ? ["normal"] : ["normal", "italic"],
     })),
+    svgo: true,
   },
 });

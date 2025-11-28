@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@fontsource-variable/space-grotesk": "^5.2.10",
-    "astro": "^5.15.1",
+    "astro": "^5.16.2",
     "signal-polyfill": "^0.2.2"
   }
 }
