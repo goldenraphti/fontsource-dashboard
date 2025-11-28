@@ -24,7 +24,7 @@ const currentUrl = Astro.url.pathname;
 ---
 
 <header transition:name="header" class={`header ${hasBorderBottomTopbar ? "border-bottom": ""} ${isTopbarFixed ? "fixed" : ""}`}>
-  <a href="/" class="logo" transition:name="h1-title">
+  <a href="/" class={'logo ' + (currentUrl === "/" ? "active" : "")} transition:name="h1-title">
     <span class="visually-hidden">Home</span>
     Home
     <!-- <Logo logoChosen="tagline" /> -->
@@ -40,7 +40,7 @@ const currentUrl = Astro.url.pathname;
           <ul>
             {navLinks.map(link => (
               <li>
-                <a href={link.url} transition:name={currentUrl !== link.url ? `h1-title-${link.name.toLowerCase()}` : null} >{link.name}</a>
+                <a href={link.url}  class={currentUrl === link.url ? "active" : ""} transition:name={currentUrl !== link.url ? `h1-title-${link.name.toLowerCase()}` : null} >{link.name}</a>
               </li>
             ))}
           </ul>
@@ -49,7 +49,7 @@ const currentUrl = Astro.url.pathname;
         <ul>
           {navLinks.map(link => (
             <li>
-              <a href={link.url} transition:name={currentUrl !== link.url ? `h1-title-${link.name.toLowerCase()}` : null} >{link.name}</a>
+              <a href={link.url}  class={currentUrl === link.url ? "active" : ""} transition:name={currentUrl !== link.url ? `h1-title-${link.name.toLowerCase()}` : null} >{link.name}</a>
             </li>
           ))}
         </ul>
@@ -188,9 +188,11 @@ const currentUrl = Astro.url.pathname;
       font-size: 1rem;
       font-weight: 300;
       text-transform: capitalize;
+      color: var(--color-text-bw);
 
       &.active {
-        font-family: var(--custom-font-bold);
+        /* font-weight: bold; */
+        color: var(--primary-1);
       }
     }
 

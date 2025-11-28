@@ -13,7 +13,7 @@ interface Props {
 const { fontToPreview } = Astro.props;
 ---
 <Font cssVariable={fontToPreview.cssVariable} preload />
-<details font-name={fontToPreview.fontName} font-categories={fontToPreview.fontCategories.join(", ")} font-tags={fontToPreview?.tags?.join(", ") ?? ""} >
+<details font-name={fontToPreview.fontName} font-categories={fontToPreview.fontCategories.join(", ")} font-tags={fontToPreview?.tags?.join(", ") ?? ""} transition:name={`font-preview-${fontToPreview.fontName.toLowerCase().replace(/\s+/g, "-")}`} >
   <summary>
     <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
   </summary>
