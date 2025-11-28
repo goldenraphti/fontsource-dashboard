@@ -22,7 +22,7 @@ getFavouritesFromDBAndUpdateSignalsState();
 
 /* add listeners to DOM */
 
-const fontsPreviewList = document.getElementById("fonts-preview-list");
+export const fontsPreviewList = document.getElementById("fonts-preview-list");
 
 const addToFavouritesButton = fontsPreviewList?.querySelectorAll(
   'button[data-action="add-to-favourites"]'
@@ -83,26 +83,4 @@ if (addToCollectionsButton?.length) {
       if (!fontFamilyClicked) return;
     });
   }
-}
-
-function filterFontsListToShowFavouritesOnly() {
-  const favouritesList = listFavourites.get();
-  fontsPreviewList?.querySelectorAll("details").forEach((fontDetail) => {
-    const fontName = fontDetail.getAttribute("font-name");
-    if (!fontName) return;
-    if (favouritesList.map((fav) => fav.fontId).includes(fontName)) {
-      fontDetail.hidden = false;
-    } else {
-      fontDetail.hidden = true;
-    }
-  });
-}
-
-if (document.querySelector("[data-filtered-fonts-list-favourites]")) {
-  effect(() => {
-    filterFontsListToShowFavouritesOnly();
-  });
-  document
-    .querySelector("[data-filtered-fonts-list-favourites]")
-    ?.removeAttribute("hidden");
 }

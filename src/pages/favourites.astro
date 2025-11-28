@@ -12,6 +12,7 @@ import Trash from '../icons/trash.svg';
 	</div>
 	<div data-filtered-fonts-list-favourites hidden>
 		<FontsPreviewList showFontsFilteringForm={false} showFontsPreviewCustomizationForm={false} />
+		<p data-no-favourites-saved>No fonts saved as favourites yet</p>
 		<button data-erase-favourites-list>Clear Favourites list <Trash /></button>
 	</div>
 
@@ -46,6 +47,10 @@ import Trash from '../icons/trash.svg';
 		cursor: pointer;
 		background-color: color-mix(in oklab, var(--color-text-bw) 25%, var(--red) 25%);
 		transition: all 0.2s ease-in-out;
+
+		&[hidden] {
+			display: none;
+		}
 
 		svg {
 			width: 1rem;
