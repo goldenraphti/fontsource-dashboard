@@ -5,15 +5,11 @@ import { db } from "./fonts-collections-favourites";
 import { slugify } from "./helper-functions.js";
 
 export const listCollections: Signal.State<any[]> = new Signal.State([]);
-// get list of collections from db
-
-// create signal effect to update UI populatring list of collections
 
 // in each collection populate list of fonts added to that collection
 
 // in each collection can rename or delete collection
 
-// function to create new colelction & naming it
 const formCreateNewCollection = document.getElementById(
   "create-new-collection",
 );
@@ -31,10 +27,6 @@ if (formCreateNewCollection) {
     input.value = "";
   });
 }
-
-// function to delete a collection
-
-// function to update UI after collection is modified
 
 const addToCollectionsButton = document.querySelectorAll(
   'button[data-action="add-to-collection"]',
@@ -60,6 +52,20 @@ effect(() => {
   populateCollectionsList();
 });
 
+function createDeleteCollectionButton(collectionToDelete: any) {
+  const btn = document.createElement("button");
+  btn.dataset.action = "delete-collection";
+  btn.textContent = "🗑️";
+  btn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    await db.delete("collections", collectionToDelete.id);
+    const updatedCollections = await db.getAll("collections");
+    listCollections.set([...updatedCollections]);
+  });
+  return btn;
+}
+
 export function populateCollectionsList() {
   const collectionsContainer = document.querySelector(
     "[data-collections-container]",
@@ -75,14 +81,7 @@ export function populateCollectionsList() {
     collectionLinkEl.textContent = collection.id;
     li.appendChild(collectionLinkEl);
     collectionsContainer.appendChild(li);
-    const btn = document.createElement("button");
-    btn.dataset.action = "delete-collection";
-    btn.textContent = "🗑️";
-    btn.addEventListener("click", async () => {
-      await db.delete("collections", collection.id);
-      const updatedCollections = await db.getAll("collections");
-      listCollections.set([...updatedCollections]);
-    });
+    const btn = createDeleteCollectionButton(collection);
     collectionLinkEl.appendChild(btn);
   });
 }
