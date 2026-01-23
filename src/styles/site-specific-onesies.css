@@ -12,16 +12,26 @@ button[data-action="delete-collection"] {
 li.collection-item a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: flex-start;
+  gap: 0.6rem;
   border: 1px solid #fff;
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 0.5rem;
-  font-weight: bold;
   background-color: color-mix(in oklab, var(--yellow), transparent 50%);
+
+  & span:first-child {
+    font-weight: bold;
+  }
+  & span:last-of-type {
+    font-style: italic;
+  }
 
   &:hover {
     background-color: var(--yellow);
+  }
+
+  & button {
+    margin-inline-start: auto;
   }
 }

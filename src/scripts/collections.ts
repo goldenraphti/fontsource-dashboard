@@ -58,7 +58,14 @@ export function populateCollectionsList() {
     li.classList.add("collection-item");
     const collectionLinkEl = document.createElement("a");
     collectionLinkEl.href = `/collections/${collection.id}`;
-    collectionLinkEl.textContent = collection.title;
+    // collectionLinkEl.textContent = `${collection.title} (${collection.fonts.length})`;
+    const collectionNameEl = document.createElement("span");
+    collectionNameEl.textContent = collection.title;
+    const collectionCountEl = document.createElement("span");
+    collectionCountEl.textContent = ` (${collection.fonts.length})`;
+    collectionLinkEl.appendChild(collectionNameEl);
+    collectionLinkEl.appendChild(collectionCountEl);
+
     collectionLinkEl.setAttribute("transition:name", collection.id);
     li.appendChild(collectionLinkEl);
     collectionsContainer.appendChild(li);

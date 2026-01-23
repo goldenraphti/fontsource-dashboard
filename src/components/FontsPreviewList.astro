@@ -130,6 +130,10 @@ const { showFontsFilteringForm = true, showFontsPreviewCustomizationForm = true 
       display: grid;
       gap: 2rem;
 
+      & li:has(details) {
+        transition: all 0.2s ease-in-out allow-discrete;
+      }
+
       & li:has(details[hidden]) {
         display: none;
         transition: all 0.2s ease-in-out allow-discrete;
