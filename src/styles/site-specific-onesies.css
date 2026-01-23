@@ -1,0 +1,27 @@
+button[data-action="delete-collection"] {
+  background-color: color-mix(in oklab, var(--red), transparent 50%);
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  text-transform: initial;
+
+  &:hover {
+    background-color: var(--red);
+  }
+}
+
+li.collection-item a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  background-color: color-mix(in oklab, var(--yellow), transparent 50%);
+
+  &:hover {
+    background-color: var(--yellow);
+  }
+}

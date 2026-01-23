@@ -3,7 +3,6 @@ import { Signal } from "signal-polyfill";
 import { effect } from "./signal-effect.js";
 
 export const listFavourites: Signal.State<any[]> = new Signal.State([]);
-export const listCollections: Signal.State<any[]> = new Signal.State([]);
 
 /* prepare IndexDB database for favourites and collections */
 
@@ -53,7 +52,7 @@ if (addToFavouritesButton?.length) {
 }
 
 function updateFavouritesBtnsUI(favouritesList: any[]) {
-  [...addToFavouritesButton].forEach((btn) => {
+  [...addToFavouritesButton]?.forEach((btn) => {
     if (
       favouritesList
         .map((fav) => fav.fontId)
@@ -66,21 +65,8 @@ function updateFavouritesBtnsUI(favouritesList: any[]) {
   });
 }
 
-effect(() => {
-  updateFavouritesBtnsUI(listFavourites.get());
-});
-
-const addToCollectionsButton = fontsPreviewList?.querySelectorAll(
-  'button[data-action="add-to-collection"]'
-);
-
-if (addToCollectionsButton?.length) {
-  for await (const btn of addToCollectionsButton) {
-    btn.addEventListener("click", async () => {
-      const fontFamilyClicked = btn
-        .closest("details")
-        ?.getAttribute("font-name");
-      if (!fontFamilyClicked) return;
-    });
-  }
+if (addToFavouritesButton?.length) {
+  effect(() => {
+    updateFavouritesBtnsUI(listFavourites.get());
+  });
 }

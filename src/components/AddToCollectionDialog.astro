@@ -1,0 +1,22 @@
+---
+interface Props {
+  fontFamily: string;
+}
+
+const { fontFamily } = Astro.props;
+---
+
+<dialog>
+  <form method="dialog">
+    <h2>Add to Collection</h2>
+    <label for="collection-name">Collection Name:</label>
+    <input type="text" name="collection-name" required />
+    <div>
+      <button value="cancel">Cancel</button>
+      <button value="confirm">Add</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="../scripts/collections.ts"></script>
+

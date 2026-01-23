@@ -5,6 +5,7 @@ import Bookmark from '../icons/bookmark.svg';
 import BookmarkSolid from '../icons/bookmark-solid.svg';
 import Star from '../icons/star.svg';
 import StarFilled from '../icons/star-filled.svg';
+import ExternalLink from '../icons/external-link.svg';
 
 interface Props {
   fontToPreview: FontType
@@ -18,7 +19,7 @@ const { fontToPreview } = Astro.props;
     <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
   </summary>
   <ul>
-    <li><a href={fontToPreview.urlPreview}>Preview 🔗</a></li>
+    <li><a href={fontToPreview.urlPreview}>Go to font page <ExternalLink /></a></li>
     <li><strong>Categories:</strong> {fontToPreview.fontCategories.join(", ")}</li>
     {fontToPreview?.tags?.length && (<li><strong>Tags:</strong> {fontToPreview.tags?.join(", ")}</li>)}
     <div class="favourites-and-collections-actions">
@@ -70,6 +71,11 @@ const { fontToPreview } = Astro.props;
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+
+      & a {
+        display: flex;
+        gap: 0.3em;
+      }
     }
 
     &[open]::details-content {

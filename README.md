@@ -2,8 +2,8 @@
 
 ## Roadmap
 
-- [ ] UI if scroll down then the font-preview-cursors div becomes fixed at the bottom of the viewport
-- [ ] can hide the ones we don't want to see in the see of filtered fonts
+- [ ] UI if scroll down then the font-preview-cursors div becomes fixed at the bottom (or top) of the viewport
+- [ ] can hide the ones we don't want to see in the sea of filtered fonts
 - [ ] give a UI hint to on clicking on the preview it shows some more details
 - [ ] improve the preview cursors UI by making it that if scrolled out of view then become fixed at bottom (kind of like the Astro dev toolbar)
 - [ ] improve the font preview cards UI/UX by adding some BG , hover effects, etc.
