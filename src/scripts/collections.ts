@@ -28,26 +28,6 @@ if (formCreateNewCollection) {
   });
 }
 
-const addToCollectionsButton = document.querySelectorAll(
-  'button[data-action="add-to-collection"]',
-);
-
-if (addToCollectionsButton?.length) {
-  for await (const btn of addToCollectionsButton) {
-    btn.addEventListener("click", async () => {
-      const fontFamilyClicked = btn
-        .closest("details")
-        ?.getAttribute("font-name");
-      if (!fontFamilyClicked) return;
-
-      await db.put("collections", { fontId: fontFamilyClicked });
-
-      const collections = await db.getAll("collections");
-      listCollections.set([...collections]);
-    });
-  }
-}
-
 effect(() => {
   populateCollectionsList();
 });

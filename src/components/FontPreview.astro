@@ -6,6 +6,8 @@ import BookmarkSolid from '../icons/bookmark-solid.svg';
 import Star from '../icons/star.svg';
 import StarFilled from '../icons/star-filled.svg';
 import ExternalLink from '../icons/external-link.svg';
+import AddToCollectionDialog from './AddToCollectionDialog.astro';
+import { slugify } from "../scripts/helper-functions.ts";
 
 interface Props {
   fontToPreview: FontType
@@ -27,8 +29,9 @@ const { fontToPreview } = Astro.props;
         <span class="is-not-favourite"><Star /></span>
         <span class="is-favourite"><StarFilled /></span>
       </button>
-      <button data-action="add-to-collection"><span class="visually-hidden">Add to collections</span><Bookmark /></button>
+      <button data-action="add-to-collection" popovertarget={`add-to-collections-dialog-${slugify(fontToPreview.fontName)}`}><span class="visually-hidden">Add to collections</span><Bookmark /></button>
     </div>
+    <AddToCollectionDialog fontFamily={fontToPreview.fontName} />
   </ul>
 </details>
 

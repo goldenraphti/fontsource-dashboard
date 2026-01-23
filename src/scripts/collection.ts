@@ -1,74 +1,89 @@
 import { Signal } from "signal-polyfill";
 import { effect } from "./signal-effect.js";
-import { db } from "./fonts-collections-favourites";
 import {
   listCollections,
   getCollectionsFromDBAndUpdateSignalsState,
 } from "./collections.js";
 
+export const listFonts: Signal.State<string[]> = new Signal.State([]);
+
 const collectionID: string =
   document.getElementsByTagName("h1")[0].dataset.id || "";
-
-const fontsListContainer = document.getElementById("collection-fonts");
 
 function findMatchingCollection(collections: any[], id: string) {
   return collections.find((collection) => collection.id === id);
 }
 
-function populateFontsListInCollection(fontsArray: string[]) {
-  for (const fontId of fontsArray) {
-    const li = document.createElement("li");
-    li.textContent = fontId;
-    fontsListContainer?.appendChild(li);
+export const isInCollectionPage =
+  window.location.href.includes("/collections/");
+
+export let fontsPreviewList = undefined;
+export let matchedCollection = undefined;
+
+if (isInCollectionPage) {
+  if (!collectionID) {
+    throw new Error("No collection id found in h1 dataset");
   }
-}
 
-function displayEmptyFontsList() {
-  if (!fontsListContainer) return;
-  const emptyMessage = document.createElement("p");
-  const linkToAddFonts = document.createElement("a");
-  linkToAddFonts.href = "/";
-  linkToAddFonts.textContent = "main fonts list";
-  linkToAddFonts.setAttribute("transition:name", "fonts-list");
-  emptyMessage.textContent = "This collection has no fonts yet. Go to the ";
-  emptyMessage.appendChild(linkToAddFonts);
-  fontsListContainer.appendChild(emptyMessage);
-}
+  await getCollectionsFromDBAndUpdateSignalsState();
 
-if (!collectionID) {
-  throw new Error("No collection id found in dataset");
-}
+  matchedCollection = findMatchingCollection(
+    listCollections.get(),
+    collectionID,
+  );
 
-await getCollectionsFromDBAndUpdateSignalsState();
-
-const matchedCollection = findMatchingCollection(
-  listCollections.get(),
-  collectionID,
-);
-
-if (!matchedCollection) {
-  throw new Error(`No collection found with id: ${collectionID}`);
-}
-
-const collectionTitleElement = document.querySelector("h1");
-
-if (collectionTitleElement) {
-  collectionTitleElement.textContent = matchedCollection.title;
-}
-
-effect(() => {
-  if (!fontsListContainer) return;
-  fontsListContainer.innerHTML = "";
-  if (matchedCollection.fonts.length === 0) {
-    displayEmptyFontsList();
-    return;
-  } else {
-    populateFontsListInCollection(matchedCollection.fonts);
+  if (!matchedCollection) {
+    throw new Error(`No collection found with id: ${collectionID}`);
   }
-});
 
-// on page load get list of fonts for this collection from db
+  const collectionTitleElement = document.querySelector("h1");
 
-// in each collection populate list of fonts added to that collection
+  if (collectionTitleElement) {
+    collectionTitleElement.textContent = matchedCollection.title;
+  }
 
-// in each collection can rename or delete collection
+  listFonts.set([...matchedCollection.fonts]);
+
+  effect(() => {
+    const noFontEl = document.querySelector("[data-no-font-in-collection]");
+    const fontsListEl = document.querySelector(
+      "[data-filtered-fonts-list-collection]",
+    );
+    if (matchedCollection.fonts.length === 0) {
+      console.log("⏰ NOFonts in collection:", matchedCollection.fonts);
+      if (noFontEl) noFontEl.removeAttribute("hidden");
+      if (fontsListEl) fontsListEl.setAttribute("hidden", "true");
+      return;
+    } else {
+      console.log(
+        "✍️Fonts in collection:",
+        matchedCollection.fonts,
+        noFontEl,
+        fontsListEl,
+      );
+      if (noFontEl) noFontEl.setAttribute("hidden", "true");
+      if (fontsListEl) fontsListEl.removeAttribute("hidden");
+    }
+  });
+
+  // in each collection can rename or delete collection
+
+  fontsPreviewList = document.getElementById("fonts-preview-list");
+
+  function filterFontsListToShowCollectionOnly() {
+    const savedFontsList = listFonts.get();
+    fontsPreviewList?.querySelectorAll("details").forEach((fontDetail) => {
+      const fontName = fontDetail.getAttribute("font-name");
+      if (!fontName) return;
+      if (savedFontsList.includes(fontName)) {
+        console.log("🔍 Checking font:", fontDetail);
+        fontDetail.hidden = false;
+      } else {
+        fontDetail.hidden = true;
+      }
+    });
+  }
+  effect(() => {
+    filterFontsListToShowCollectionOnly();
+  });
+}

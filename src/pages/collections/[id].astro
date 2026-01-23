@@ -3,6 +3,7 @@ export const prerender = false;
 
 import Layout from '../../layouts/Layout.astro';
 import Logo from '../../components/Logo.astro';
+import FontsPreviewList from '../../components/FontsPreviewList.astro';
 
 const { id } = Astro.params;
 ---
@@ -11,7 +12,11 @@ const { id } = Astro.params;
 	<div>
 		<Logo small={true}  />
 		<h1 data-id={id} transition:name={id}>{ id }</h1>
-    <ul id="collection-fonts"></ul>
+    <div data-filtered-fonts-list-collection hidden>
+      <FontsPreviewList showFontsFilteringForm={false} showFontsPreviewCustomizationForm={false} />
+    </div>
+		<p data-no-font-in-collection hidden>This collection has no fonts yet. Go to the <a href="/">homepage</a> or your <a href="/favourites">saved favourites</a> to add some</p>
+
 	</div>
 
 	<script src="../../scripts/collection.ts"></script>
@@ -31,4 +36,15 @@ const { id } = Astro.params;
 			margin: 0;
 		}
 	}
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block-start: 2rem !important;
+    font-size: 2rem;
+    list-style: circle;
+    padding-inline-start: 2rem;
+    align-items: flex-start;
+  }
 </style>
