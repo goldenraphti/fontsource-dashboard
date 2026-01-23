@@ -1,0 +1,34 @@
+---
+export const prerender = false;
+
+import Layout from '../../layouts/Layout.astro';
+import Logo from '../../components/Logo.astro';
+
+const { id } = Astro.params;
+---
+
+<Layout title=" - Fonts Dashboard" isHomepage={false}>
+	<div>
+		<Logo small={true}  />
+		<h1 data-id={id} transition:name={id}>{ id }</h1>
+    <ul id="collection-fonts"></ul>
+	</div>
+
+	<script src="../../scripts/collection.ts"></script>
+</Layout>
+
+
+<style>
+	div:has(> h1) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		margin-block-start: 7rem;
+		margin-block-end: 4rem;
+
+		& > * {
+			margin: 0;
+		}
+	}
+</style>

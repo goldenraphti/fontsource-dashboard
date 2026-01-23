@@ -2,6 +2,8 @@
 import { defineConfig, fontProviders } from "astro/config";
 import { fontsList } from "./src/content/fonts-list";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   experimental: {
@@ -14,4 +16,6 @@ export default defineConfig({
     })),
     svgo: true,
   },
+
+  adapter: netlify(),
 });

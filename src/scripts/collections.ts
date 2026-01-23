@@ -1,14 +1,10 @@
-import { openDB } from "idb";
 import { Signal } from "signal-polyfill";
 import { effect } from "./signal-effect.js";
 import { db } from "./fonts-collections-favourites";
 import { slugify } from "./helper-functions.js";
+import type { Collection } from "../types/types.js";
 
-export const listCollections: Signal.State<any[]> = new Signal.State([]);
-
-// in each collection populate list of fonts added to that collection
-
-// in each collection can rename or delete collection
+export const listCollections: Signal.State<Collection[]> = new Signal.State([]);
 
 const formCreateNewCollection = document.getElementById(
   "create-new-collection",
@@ -21,7 +17,11 @@ if (formCreateNewCollection) {
     ) as HTMLInputElement;
     const collectionName = input.value.trim();
     if (!collectionName) return;
-    await db.put("collections", { id: collectionName, fonts: [] });
+    await db.put("collections", {
+      title: collectionName,
+      fonts: [],
+      id: slugify(collectionName),
+    });
     const collections = await db.getAll("collections");
     listCollections.set([...collections]);
     input.value = "";
@@ -77,8 +77,9 @@ export function populateCollectionsList() {
     const li = document.createElement("li");
     li.classList.add("collection-item");
     const collectionLinkEl = document.createElement("a");
-    collectionLinkEl.href = `/collections/${slugify(collection.id)}`;
-    collectionLinkEl.textContent = collection.id;
+    collectionLinkEl.href = `/collections/${collection.id}`;
+    collectionLinkEl.textContent = collection.title;
+    collectionLinkEl.setAttribute("transition:name", collection.id);
     li.appendChild(collectionLinkEl);
     collectionsContainer.appendChild(li);
     const btn = createDeleteCollectionButton(collection);
@@ -86,9 +87,14 @@ export function populateCollectionsList() {
   });
 }
 
-async function getCollectionsFromDBAndUpdateSignalsState() {
+export async function getCollectionsFromDBAndUpdateSignalsState() {
   const collectionsFromDB = await db.getAll("collections");
   listCollections.set([...collectionsFromDB]);
+  console.log(
+    "📥 Fetching collections from IndexedDB",
+    collectionsFromDB,
+    listCollections,
+  );
 }
 getCollectionsFromDBAndUpdateSignalsState();
 
