@@ -50,17 +50,10 @@ if (isInCollectionPage) {
       "[data-filtered-fonts-list-collection]",
     );
     if (matchedCollection.fonts.length === 0) {
-      console.log("⏰ NOFonts in collection:", matchedCollection.fonts);
       if (noFontEl) noFontEl.removeAttribute("hidden");
       if (fontsListEl) fontsListEl.setAttribute("hidden", "true");
       return;
     } else {
-      console.log(
-        "✍️Fonts in collection:",
-        matchedCollection.fonts,
-        noFontEl,
-        fontsListEl,
-      );
       if (noFontEl) noFontEl.setAttribute("hidden", "true");
       if (fontsListEl) fontsListEl.removeAttribute("hidden");
     }
@@ -76,7 +69,6 @@ if (isInCollectionPage) {
       const fontName = fontDetail.getAttribute("font-name");
       if (!fontName) return;
       if (savedFontsList.includes(fontName)) {
-        console.log("🔍 Checking font:", fontDetail);
         fontDetail.hidden = false;
       } else {
         fontDetail.hidden = true;

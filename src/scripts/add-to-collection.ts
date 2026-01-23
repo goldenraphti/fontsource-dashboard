@@ -1,5 +1,3 @@
-import { Signal } from "signal-polyfill";
-import { effect } from "./signal-effect.js";
 import { db } from "./fonts-collections-favourites";
 import {
   listCollections,
@@ -74,7 +72,6 @@ for (const form of popoverForms) {
         // update signals in case it's done in a collection page for example
         if (isInCollectionPage) {
           if (matchedCollection) {
-            console.log("📦", matchedCollection, collectionId, listFonts.get());
             if (matchedCollection.id === collectionId.id) {
               const updatedCollection = await db.get(
                 "collections",

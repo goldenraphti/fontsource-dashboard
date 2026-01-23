@@ -70,11 +70,6 @@ export function populateCollectionsList() {
 export async function getCollectionsFromDBAndUpdateSignalsState() {
   const collectionsFromDB = await db.getAll("collections");
   listCollections.set([...collectionsFromDB]);
-  console.log(
-    "📥 Fetching collections from IndexedDB",
-    collectionsFromDB,
-    listCollections,
-  );
 }
 getCollectionsFromDBAndUpdateSignalsState();
 
