@@ -21,7 +21,7 @@ const { fontToPreview } = Astro.props;
     <p style=`--font-family: var(${fontToPreview.cssVariable})`>This is a preview of the font "{fontToPreview.fontName}"</p>
   </summary>
   <ul>
-    <li><a href={fontToPreview.urlPreview}>Go to font page <ExternalLink /></a></li>
+    <li><a href={fontToPreview.urlPreview} target="_blank">Go to font page <ExternalLink /></a></li>
     <li><strong>Categories:</strong> {fontToPreview.fontCategories.join(", ")}</li>
     {fontToPreview?.tags?.length && (<li><strong>Tags:</strong> {fontToPreview.tags?.join(", ")}</li>)}
     <div class="favourites-and-collections-actions">
@@ -78,6 +78,10 @@ const { fontToPreview } = Astro.props;
       & a {
         display: flex;
         gap: 0.3em;
+
+        &:after {
+          display: none;
+        }
       }
     }
 

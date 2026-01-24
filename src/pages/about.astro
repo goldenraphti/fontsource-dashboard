@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FontsPreviewList from '../components/FontsPreviewList.astro';
+import Logo from '../components/Logo.astro';
+---
+
+<Layout title="Fonts Dashboard" isHomepage={true}>
+	<div>
+		<Logo/>
+		<h1>About - Fonts Dashboard</h1>
+		<p>Built with love by <a href="https://raphaelferrand.com">Raphaël Ferrand</a>, leveraging the amazing <a href="https://fontsource.org">Font Source</a> fonts</p>
+	</div>
+</Layout>
+
+<style>
+	div:has(> h1) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		margin-block-start: 7rem;
+		margin-block-end: 4rem;
+
+		h1 {
+			margin-block-start: 1rem;
+			margin-block-end: 3rem;
+		}
+	}
+</style>
