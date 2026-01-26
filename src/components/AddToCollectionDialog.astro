@@ -11,6 +11,7 @@ const { fontFamily } = Astro.props;
   <form method="dialog">
     <h3>Choose which collection(s) to add {fontFamily} to:</h3>
     <ul data-add-to-collections-container></ul>
+    <p data-empty-collection-message hidden>You have no collection created yet to save this font into. Please start by <a href="/collections">creating your first collections</a>.</p>
     <menu>
       <button data-action="hide-popover">Cancel</button>
       <button type="submit">Save</button>

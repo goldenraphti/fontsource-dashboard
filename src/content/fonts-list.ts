@@ -808,4 +808,25 @@ export const fontsList: FontType[] = [
     fontFamily: "'Fredoka One', display",
     cssVariable: "--font-fredoka-one",
   },
+  {
+    fontName: "Dynapuff",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/dynapuff",
+    fontFamily: "'Dynapuff', display",
+    cssVariable: "--font-dynapuff",
+  },
+  {
+    fontName: "Rubik Bubbles",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/rubik-bubbles",
+    fontFamily: "'Rubik Bubbles', display",
+    cssVariable: "--font-rubik-bubbles",
+  },
+  {
+    fontName: "Chicle",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/chicle",
+    fontFamily: "'Chicle', display",
+    cssVariable: "--font-chicle",
+  },
 ];

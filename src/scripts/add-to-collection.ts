@@ -97,13 +97,46 @@ if (!fontNameToAdd) {
   throw new Error("No font name found to add to collections");
 }
 
+export function hideCheckboxesListAndDisplayEmptyCoollectionsText(
+  collectionsCheckboxesListContainer: HTMLUListElement,
+  emptyCollectionText: HTMLParagraphElement,
+) {
+  collectionsCheckboxesListContainer.hidden = true;
+  emptyCollectionText.removeAttribute("hidden");
+}
+
+export function showCheckboxesListAndHideEmptyCollectionsText(
+  collectionsCheckboxesListContainer: HTMLUListElement,
+  emptyCollectionText: HTMLParagraphElement,
+) {
+  collectionsCheckboxesListContainer.removeAttribute("hidden");
+  emptyCollectionText.hidden = true;
+}
+
 export function populateCollectionsCheckboxesList(
   fontName: string,
   collectionsCheckboxesListContainer: Element | null,
 ) {
   if (!collectionsCheckboxesListContainer) return;
+  const emptyCollectionText =
+    collectionsCheckboxesListContainer.parentElement?.querySelector(
+      "p[data-empty-collection-message]",
+    );
   collectionsCheckboxesListContainer.innerHTML = "";
   const collections = listCollections.get();
+
+  if (collections.length === 0) {
+    hideCheckboxesListAndDisplayEmptyCoollectionsText(
+      collectionsCheckboxesListContainer,
+      emptyCollectionText,
+    );
+    return;
+  } else {
+    showCheckboxesListAndHideEmptyCollectionsText(
+      collectionsCheckboxesListContainer,
+      emptyCollectionText,
+    );
+  }
 
   for (const collection of collections) {
     const label = document.createElement("label");
