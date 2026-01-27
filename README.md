@@ -2,8 +2,6 @@
 
 ## Roadmap
 
-- [ ] the "save to collection" button in oreviewFont component : if it is already saved in some collection then use the filled icon
-
 - [ ] add ability to preview custom text input by the user
 
 - [ ] UI if scroll down then the font-preview-cursors div becomes fixed at the bottom (or top) of the viewport

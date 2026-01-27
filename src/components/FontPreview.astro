@@ -29,11 +29,17 @@ const { fontToPreview } = Astro.props;
         <span class="is-not-favourite"><Star /></span>
         <span class="is-favourite"><StarFilled /></span>
       </button>
-      <button data-action="add-to-collection" popovertarget={`add-to-collections-dialog-${slugify(fontToPreview.fontName)}`}><span class="visually-hidden">Add to collections</span><Bookmark /></button>
+      <button data-action="add-to-collection" data-is-saved-in-collections="false" popovertarget={`add-to-collections-dialog-${slugify(fontToPreview.fontName)}`}>
+        <span class="visually-hidden">Add to collections</span>
+        <span class="is-not-saved-in-collections"><Bookmark /></span>
+        <span class="is-saved-in-collections"><BookmarkSolid /></span>
+      </button>
     </div>
     <AddToCollectionDialog fontFamily={fontToPreview.fontName} />
   </ul>
 </details>
+
+<script src="../scripts/fonts-preview-collection.ts"></script>
 
 <style>
   details {
@@ -133,6 +139,23 @@ const { fontToPreview } = Astro.props;
             display: none;
           }
           .is-not-favourite {
+            display: inline;
+          }
+        }
+
+        &[data-is-saved-in-collections="true"] {
+          .is-saved-in-collections {
+            display: inline;
+          }
+          .is-not-saved-in-collections {
+            display: none;
+          }
+        }
+        &[data-is-saved-in-collections="false"] {
+          .is-saved-in-collections {
+            display: none;
+          }
+          .is-not-saved-in-collections {
             display: inline;
           }
         }
