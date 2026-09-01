@@ -29,7 +29,7 @@ export const fontsList: FontType[] = [
     fontName: "Geologica",
     fontCategories: ["sans-serif"],
     urlPreview: "https://fontsource.org/fonts/geologica",
-    isVariable: false,
+    isVariable: true,
     fontFamily: "'Geologica Variable', sans-serif",
     cssVariable: "--font-geologica",
   },
@@ -101,16 +101,14 @@ export const fontsList: FontType[] = [
     fontName: "Arvo",
     fontCategories: ["serif"],
     urlPreview: "https://fontsource.org/fonts/arvo",
-    isVariable: true,
-    fontFamily: "'Arvo Variable', serif",
+    fontFamily: "'Arvo', serif",
     cssVariable: "--font-arvo",
   },
   {
     fontName: "Vidaloka",
     fontCategories: ["serif"],
     urlPreview: "https://fontsource.org/fonts/vidaloka",
-    isVariable: true,
-    fontFamily: "'Vidaloka Variable', serif",
+    fontFamily: "'Vidaloka', serif",
     cssVariable: "--font-vidaloka",
   },
   {
@@ -141,8 +139,7 @@ export const fontsList: FontType[] = [
     fontName: "Poppins",
     fontCategories: ["sans-serif"],
     urlPreview: "https://fontsource.org/fonts/poppins",
-    isVariable: true,
-    fontFamily: "'Poppins Variable', sans-serif",
+    fontFamily: "'Poppins', sans-serif",
     cssVariable: "--font-poppins",
   },
   {
@@ -162,7 +159,7 @@ export const fontsList: FontType[] = [
   },
   {
     fontName: "Rubik Mono One",
-    fontCategories: ["monospace", "display"],
+    fontCategories: ["sans-serif", "display"],
     urlPreview: "https://fontsource.org/fonts/rubik-mono-one",
     fontFamily: "'Rubik Mono One', monospace",
     cssVariable: "--font-rubik-mono-one",
@@ -183,7 +180,7 @@ export const fontsList: FontType[] = [
   },
   {
     fontName: "Bagnard",
-    fontCategories: ["display"],
+    fontCategories: ["serif", "display"],
     urlPreview: "https://fontsource.org/fonts/bagnard",
     fontFamily: "'Bagnard', display",
     cssVariable: "--font-bagnard",
@@ -220,7 +217,8 @@ export const fontsList: FontType[] = [
     fontName: "Eczar",
     fontCategories: ["serif", "display"],
     urlPreview: "https://fontsource.org/fonts/eczar",
-    fontFamily: "'Eczar', serif",
+    isVariable: true,
+    fontFamily: "'Eczar Variable', serif",
     cssVariable: "--font-eczar",
   },
   {
@@ -267,7 +265,7 @@ export const fontsList: FontType[] = [
   },
   {
     fontName: "Turret Road",
-    fontCategories: ["monospace", "display"],
+    fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/turret-road",
     fontFamily: "'Turret Road', monospace",
     cssVariable: "--font-turret-road",
@@ -420,6 +418,13 @@ export const fontsList: FontType[] = [
     cssVariable: "--font-redaction-10",
   },
   {
+    fontName: "Redaction 35",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/redaction-35",
+    fontFamily: "'Redaction 35', display",
+    cssVariable: "--font-redaction-35",
+  },
+  {
     fontName: "Redaction",
     fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/redaction",
@@ -533,7 +538,7 @@ export const fontsList: FontType[] = [
   },
   {
     fontName: "Special Elite",
-    fontCategories: ["monospace", "display"],
+    fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/special-elite",
     fontFamily: "'Special Elite', monospace",
     cssVariable: "--font-special-elite",
@@ -658,13 +663,6 @@ export const fontsList: FontType[] = [
     cssVariable: "--font-dm-mono",
   },
   {
-    fontName: "JetBrains Mono",
-    fontCategories: ["monospace"],
-    urlPreview: "https://fontsource.org/fonts/jetbrains-mono",
-    fontFamily: "'JetBrains Mono', monospace",
-    cssVariable: "--font-jetbrains-mono",
-  },
-  {
     fontName: "IBM Plex Mono",
     fontCategories: ["monospace"],
     urlPreview: "https://fontsource.org/fonts/ibm-plex-mono",
@@ -712,8 +710,7 @@ export const fontsList: FontType[] = [
     fontName: "Montserrat Alternates",
     fontCategories: ["sans-serif"],
     urlPreview: "https://fontsource.org/fonts/montserrat-alternates",
-    isVariable: true,
-    fontFamily: "'Montserrat Alternates Variable', sans-serif",
+    fontFamily: "'Montserrat Alternates', sans-serif",
     cssVariable: "--font-montserrat-alternates",
   },
   {
@@ -765,13 +762,6 @@ export const fontsList: FontType[] = [
     fontFamily: "'Libre Caslon Text', serif",
     cssVariable: "--font-libre-caslon-text",
     disableItalic: true,
-  },
-  {
-    fontName: "Spectral",
-    fontCategories: ["serif"],
-    urlPreview: "https://fontsource.org/fonts/spectral",
-    fontFamily: "'Spectral', serif",
-    cssVariable: "--font-spectral",
   },
   {
     fontName: "Caprasimo",
