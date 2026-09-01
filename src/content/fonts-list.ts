@@ -829,4 +829,32 @@ export const fontsList: FontType[] = [
     fontFamily: "'Chicle', display",
     cssVariable: "--font-chicle",
   },
+  {
+    fontName: "Forum",
+    fontCategories: ["display"],
+    urlPreview: "https://fontsource.org/fonts/forum",
+    fontFamily: "'Forum', display",
+    cssVariable: "--font-forum",
+  },
+  {
+    fontName: "Asul",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/asul",
+    fontFamily: "'Asul', serif",
+    cssVariable: "--font-asul",
+  },
+  {
+    fontName: "Alegreya SC",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/alegreya-sc",
+    fontFamily: "'Alegreya SC', serif",
+    cssVariable: "--font-alegreya-sc",
+  },
+  {
+    fontName: "Petit Formal Script",
+    fontCategories: ["handwriting", "display"],
+    urlPreview: "https://fontsource.org/fonts/petit-formal-script",
+    fontFamily: "'Petit Formal Script', handwriting",
+    cssVariable: "--font-petit-formal-script",
+  },
 ];

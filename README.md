@@ -2,6 +2,8 @@
 
 ## Roadmap
 
+- [ ] state should be saved in URL whenever possible so it can be shared
+
 - [ ] add ability to preview custom text input by the user
 
 - [ ] UI if scroll down then the font-preview-cursors div becomes fixed at the bottom (or top) of the viewport
