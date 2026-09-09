@@ -1,13 +1,23 @@
-export type FontType = {
+type BaseFont = {
   fontName: string;
   fontCategories: string[];
   urlPreview: string;
-  isVariable?: boolean;
   tags?: string[];
-  fontFamily: string;
   cssVariable: string;
   disableItalic?: boolean;
 };
+
+type VariableFont = BaseFont & {
+  isVariable: true;
+  fontFamily: `${string}Variable${string}`; // must contain "Variable"
+};
+
+type NonVariableFont = BaseFont & {
+  isVariable?: false;
+  fontFamily: string;
+};
+
+export type FontType = VariableFont | NonVariableFont;
 
 export const fontsList: FontType[] = [
   {
@@ -442,7 +452,7 @@ export const fontsList: FontType[] = [
     fontName: "Tilt Warp",
     fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/tilt-warp",
-    fontFamily: "'Tilt Warp', display",
+    fontFamily: "'Tilt Warp Variable', display",
     cssVariable: "--font-tilt-warp",
     isVariable: true,
   },
@@ -457,7 +467,7 @@ export const fontsList: FontType[] = [
     fontName: "Climate Crisis",
     fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/climate-crisis",
-    fontFamily: "'Climate Crisis', display",
+    fontFamily: "'Climate Crisis Variable', display",
     cssVariable: "--font-climate-crisis",
     isVariable: true,
   },
@@ -804,7 +814,7 @@ export const fontsList: FontType[] = [
     fontName: "Dynapuff",
     fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/dynapuff",
-    fontFamily: "'Dynapuff', display",
+    fontFamily: "'Dynapuff Variable', display",
     cssVariable: "--font-dynapuff",
     isVariable: true,
   },
@@ -854,7 +864,7 @@ export const fontsList: FontType[] = [
     fontName: "Texturina",
     fontCategories: ["serif"],
     urlPreview: "https://fontsource.org/fonts/texturina",
-    fontFamily: "'Texturina', serif",
+    fontFamily: "'Texturina Variable', serif",
     cssVariable: "--font-texturina",
     isVariable: true,
   },
@@ -862,7 +872,7 @@ export const fontsList: FontType[] = [
     fontName: "Kalnia",
     fontCategories: ["serif"],
     urlPreview: "https://fontsource.org/fonts/kalnia",
-    fontFamily: "'Kalnia', serif",
+    fontFamily: "'Kalnia Variable', serif",
     cssVariable: "--font-kalnia",
     isVariable: true,
   },
