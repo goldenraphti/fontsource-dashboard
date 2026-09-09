@@ -444,6 +444,7 @@ export const fontsList: FontType[] = [
     urlPreview: "https://fontsource.org/fonts/tilt-warp",
     fontFamily: "'Tilt Warp', display",
     cssVariable: "--font-tilt-warp",
+    isVariable: true,
   },
   {
     fontName: "Sansita Swashed",
@@ -458,6 +459,7 @@ export const fontsList: FontType[] = [
     urlPreview: "https://fontsource.org/fonts/climate-crisis",
     fontFamily: "'Climate Crisis', display",
     cssVariable: "--font-climate-crisis",
+    isVariable: true,
   },
   {
     fontName: "Inter",
@@ -804,6 +806,7 @@ export const fontsList: FontType[] = [
     urlPreview: "https://fontsource.org/fonts/dynapuff",
     fontFamily: "'Dynapuff', display",
     cssVariable: "--font-dynapuff",
+    isVariable: true,
   },
   {
     fontName: "Rubik Bubbles",
