@@ -847,4 +847,20 @@ export const fontsList: FontType[] = [
     fontFamily: "'Petit Formal Script', handwriting",
     cssVariable: "--font-petit-formal-script",
   },
+  {
+    fontName: "Texturina",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/texturina",
+    fontFamily: "'Texturina', serif",
+    cssVariable: "--font-texturina",
+    isVariable: true,
+  },
+  {
+    fontName: "Kalnia",
+    fontCategories: ["serif"],
+    urlPreview: "https://fontsource.org/fonts/kalnia",
+    fontFamily: "'Kalnia', serif",
+    cssVariable: "--font-kalnia",
+    isVariable: true,
+  },
 ];
