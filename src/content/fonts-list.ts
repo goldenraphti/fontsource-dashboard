@@ -811,10 +811,10 @@ export const fontsList: FontType[] = [
     cssVariable: "--font-fredoka-one",
   },
   {
-    fontName: "Dynapuff",
+    fontName: "DynaPuff",
     fontCategories: ["display"],
     urlPreview: "https://fontsource.org/fonts/dynapuff",
-    fontFamily: "'Dynapuff Variable', display",
+    fontFamily: "'DynaPuff Variable', display",
     cssVariable: "--font-dynapuff",
     isVariable: true,
   },
